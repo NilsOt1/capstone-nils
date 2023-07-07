@@ -1,16 +1,24 @@
 import { useRouter } from "next/router";
-import { MainPage } from "../../pages/main-page/main-page";
+import { SuggestionPage } from "../../pages";
+import { styled } from "styled-components";
 
 export default function ButtonNextPage({ id, text }) {
   const router = useRouter();
   const handleClick = () => {
-    router.push("/main-page/main-page");
+    router.push("/suggestions-page");
   };
   return (
     <>
-      <button type="button" id={id} onClick={handleClick}>
-        {text}
-      </button>
+      <StyledButton>
+        <button type="button" id={id} onClick={handleClick}>
+          {text}
+        </button>
+      </StyledButton>
     </>
   );
 }
+
+const StyledButton = styled.button`
+  display: flex;
+  margin: 2rem;
+`;
