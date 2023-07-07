@@ -1,7 +1,11 @@
+import MainColor from "@/components/MainColor";
+
 export default function HomePage() {
   return (
-    <div>
-      <h1>Hello from Next.js</h1>
-    </div>
+    <>
+      <MainColor text="color1" id="color1" />
+      <MainColor text="color2" id="color2" />
+      <MainColor text="color3" id="color3" />
+    </>
   );
 }
