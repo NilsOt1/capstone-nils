@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import { SuggestionPage } from "../../pages";
 import { styled } from "styled-components";
 
 export default function ButtonNextPage({ id, text }) {

@@ -1,3 +1,10 @@
+import SuggestedColor from "@/components/SuggestedColor";
+
 export default function SuggestionPage() {
-  return <h1>Hallo</h1>;
+  return (
+    <>
+      <SuggestedColor text="Color Suggestion Nr. 1" />
+      <SuggestedColor text="Color Suggestion Nr. 2" />
+    </>
+  );
 }
