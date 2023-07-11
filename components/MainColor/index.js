@@ -1,31 +1,44 @@
 import { Fragment } from "react";
+import styled from "styled-components";
 
 export default function MainColor({ color, handleColorChange }) {
+  const { color1, color2, color3 } = color;
+
   const colors = [
-    { id: "color1", text: "color1", name: "color1" },
-    { id: "color2", text: "color2", name: "color2" },
-    { id: "color3", text: "color3", name: "color3" },
+    { id: "color1", text: "Color1", name: "color1" },
+    { id: "color2", text: "Color2", name: "color2" },
+    { id: "color3", text: "Color3", name: "color3" },
   ];
 
-  const handleChange = (event) => {
-    const { id, value } = event.target;
-    handleColorChange(id, value);
-  };
+  console.log(color);
 
   return (
-    <Fragment>
-      {colors.map(({ id, text, name }) => (
-        <Fragment key={id}>
-          <label htmlFor={id}>{text}</label>
-          <input
-            type="color"
-            id={id}
-            name={name}
-            value={color[id]}
-            onChange={handleChange}
-          />
-        </Fragment>
-      ))}
-    </Fragment>
+    <StyledColors>
+      <div>
+        {colors.map(({ id, text, name }) => (
+          <Fragment key={id}>
+            <StyledLabel>
+              <label htmlFor={id}>{text}</label>
+            </StyledLabel>
+            <input
+              type="color"
+              id={id}
+              name={name}
+              value={color[id]}
+              onChange={(event) => handleColorChange(id, event.target.value)}
+            />
+          </Fragment>
+        ))}
+      </div>
+    </StyledColors>
   );
 }
+const StyledLabel = styled.label`
+  background-color: crimson;
+`;
+const StyledColors = styled.div`
+  background-color: lightcoral;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+`;
