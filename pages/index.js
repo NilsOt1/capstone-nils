@@ -1,13 +1,14 @@
 import MainColor from "@/components/MainColor";
-import { useState } from "react";
+import ButtonNextPage from "@/components/ButtonNextPage";
 import Link from "next/link";
+import { StyledButtonNextPage } from "@/components/ButtonNextPage/styles";
 
 export default function HomePage({ color, handleColorChange }) {
   return (
     <>
       <MainColor color={color} handleColorChange={handleColorChange} />
       <Link href="/suggestions-page">
-        <button type="button">Color Me!</button>
+        <ButtonNextPage text="Color Me!" />
       </Link>
     </>
   );
