@@ -34,11 +34,11 @@ export default function MainColor({ color, handleColorChange }) {
   );
 }
 const StyledLabel = styled.label`
-  background-color: crimson;
+  background-color: #abb5ac;
+  padding: 5px;
 `;
 const StyledColors = styled.div`
   background-color: lightcoral;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
 `;
