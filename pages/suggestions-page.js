@@ -5,7 +5,6 @@ export default function SuggestionPage({ color }) {
     <>
       <SuggestedColor text="Color Suggestion Nr. 1" color={color.color1} />
       <SuggestedColor text="Color Suggestion Nr. 2" color={color.color2} />
-      <SuggestedColor text="Color Suggestion Nr. 3" color={color.color3} />
     </>
   );
 }

@@ -1,21 +1,17 @@
 import styled from "styled-components";
 
 export const StyledLabel = styled.label`
-  margin: 5px;
-  padding: 5px;
-  border-radius: 15px;
+  margin: 25px 0px;
   text-align: center;
 `;
 export const StyledInput = styled.input`
   width: 90px;
   height: 200px;
   padding: 5px;
-  margin: 30px;
+  margin: 10px 20px;
   border-radius: 20px;
-  grid-area: ${(props) => props.gridArea};
+  background-color: lightgray;
 `;
 export const StyledDiv = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  display: flex;
 `;

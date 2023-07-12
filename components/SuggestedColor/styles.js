@@ -5,5 +5,4 @@ export const StyledDiv = styled.div`
   margin: 20px;
   padding: 85px;
   border-radius: 30px;
-  text-align: center;
 `;
