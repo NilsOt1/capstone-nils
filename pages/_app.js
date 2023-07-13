@@ -7,12 +7,12 @@ export default function App({ Component, pageProps }) {
     color2: "#4287A9",
     color3: "#2F933A",
   });
-  const handleColorChange = (id, value) => {
+  function handleColorChange(id, value) {
     setColor((prevColor) => ({
       ...prevColor,
       [id]: value,
     }));
-  };
+  }
 
   return (
     <>
