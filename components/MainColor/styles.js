@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledLabel = styled.label`
-  margin: 25px 0px;
+  margin: 25px 0;
   text-align: center;
 `;
 export const StyledInput = styled.input`
