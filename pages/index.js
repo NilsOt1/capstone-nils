@@ -13,7 +13,7 @@ export const StyledLink = styled(Link)`
   background-color: #bcbdbc;
 `;
 
-const StyledContainer = styled.div`
+const StyledMain = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,9 +22,9 @@ const StyledContainer = styled.div`
 
 export default function HomePage({ color, handleColorChange }) {
   return (
-    <StyledContainer>
+    <StyledMain>
       <MainColor color={color} handleColorChange={handleColorChange} />
       <StyledLink href="/suggestions-page">Color Me!</StyledLink>
-    </StyledContainer>
+    </StyledMain>
   );
 }

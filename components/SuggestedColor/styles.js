@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledDiv = styled.div`
+export const StyledSuggestion = styled.div`
   background-color: ${(props) => props.color};
   margin: 20px;
   padding: 85px;

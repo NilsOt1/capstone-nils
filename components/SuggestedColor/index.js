@@ -1,5 +1,5 @@
-import { StyledDiv } from "./styles";
+import { StyledSuggestion } from "./styles";
 
-export default function SuggestedColor({ text, color }) {
-  return <StyledDiv color={color}>{text}</StyledDiv>;
+export default function SuggestedColor({ children, color }) {
+  return <StyledSuggestion color={color}>{children}</StyledSuggestion>;
 }
