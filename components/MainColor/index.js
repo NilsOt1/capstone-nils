@@ -9,20 +9,18 @@ export default function MainColor({ color, handleColorChange }) {
   ];
 
   return (
-    <StyledDiv>
+       <StyledDiv>
       {colors.map(({ id, text, name }) => (
-        <Fragment key={id}>
-          <StyledLabel htmlFor={id}>
-            {text}
-            <StyledInput
-              type="color"
-              id={id}
-              name={name}
-              value={color[id]}
-              onChange={(event) => handleColorChange(id, event.target.value)}
-            />
-          </StyledLabel>
-        </Fragment>
+        <StyledLabel key={id} htmlFor={id}>
+          {text}
+          <StyledInput
+            type="color"
+            id={id}
+            name={name}
+            value={color[id]}
+            onChange={(event) => handleColorChange(id, event.target.value)}
+          />
+        </StyledLabel>
       ))}
     </StyledDiv>
   );
