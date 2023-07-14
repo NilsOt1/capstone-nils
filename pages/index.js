@@ -1,6 +1,7 @@
 import MainColor from "@/components/MainColor";
 import Link from "next/link";
 import styled from "styled-components";
+import Rooms from "@/components/Rooms";
 
 export const StyledLink = styled(Link)`
   padding: 15px 40px;
@@ -23,6 +24,7 @@ const StyledMain = styled.div`
 export default function HomePage({ color, handleColorChange }) {
   return (
     <StyledMain>
+      <Rooms />
       <MainColor color={color} handleColorChange={handleColorChange} />
       <StyledLink href="/suggestions-page">Color Me!</StyledLink>
     </StyledMain>

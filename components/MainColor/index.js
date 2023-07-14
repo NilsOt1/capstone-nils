@@ -1,7 +1,6 @@
-import { Fragment } from "react";
 import { StyledInput, StyledDiv, StyledLabel } from "./styles";
 
-export default function MainColor({ color, handleColorChange }) {
+export default function MainColor({ color, handleColorChange, disabled }) {
   const MainColors = [
     { id: "color1", text: "Color1", name: "color1" },
     { id: "color2", text: "Color2", name: "color2" },
@@ -19,6 +18,7 @@ export default function MainColor({ color, handleColorChange }) {
             name={name}
             value={color[id]}
             onChange={(event) => handleColorChange(id, event.target.value)}
+            disabled={disabled}
           />
         </StyledLabel>
       ))}

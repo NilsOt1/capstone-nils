@@ -6,7 +6,7 @@ export const StyledLabel = styled.label`
 `;
 export const StyledInput = styled.input`
   width: 90px;
-  height: 200px;
+  height: 100px;
   padding: 5px;
   margin: 10px 20px;
   border-radius: 20px;
