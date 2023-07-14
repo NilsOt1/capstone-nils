@@ -2,9 +2,9 @@ export default function Rooms() {
   return (
     <>
       <label htmlFor="rooms">Rooms</label>
-      <select name="rooms" id="rooms">
+      <span id="rooms">
         <option>Living Room</option>
-      </select>
+      </span>
     </>
   );
 }
