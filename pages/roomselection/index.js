@@ -1,6 +1,7 @@
 import RoomSelectionForm from "@/components/RoomSelection/Form";
 import List from "@/components/RoomList";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function RoomSelectionPage({ handleCreateRoom, rooms }) {
   const [showRoomForm, setShowRoomForm] = useState(false);
@@ -12,7 +13,6 @@ export default function RoomSelectionPage({ handleCreateRoom, rooms }) {
   function handleFormClose() {
     setShowRoomForm(false);
   }
-  console.log(rooms);
   return (
     <>
       <List rooms={rooms} />
@@ -24,6 +24,7 @@ export default function RoomSelectionPage({ handleCreateRoom, rooms }) {
       ) : (
         <button onClick={handleNewRoomClick}>New room</button>
       )}
+      <Link href="/choosecolorpage">Let`s go !</Link>
     </>
   );
 }
