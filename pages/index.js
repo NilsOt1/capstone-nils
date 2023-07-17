@@ -21,12 +21,12 @@ const StyledMain = styled.div`
   margin-left: 30px;
 `;
 
-export default function HomePage({ color, handleColorChange }) {
+export default function HomePage({ color, handleColorChange, rooms }) {
   return (
     <StyledMain>
-      <Rooms />
+      <Rooms rooms={rooms} />
       <MainColor color={color} handleColorChange={handleColorChange} />
-      <StyledLink href="/suggestions-page">Color Me!</StyledLink>
+      <StyledLink href="/suggestionpage">Color Me!</StyledLink>
     </StyledMain>
   );
 }

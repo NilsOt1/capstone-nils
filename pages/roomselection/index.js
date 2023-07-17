@@ -12,7 +12,7 @@ export default function RoomSelectionPage({ handleCreateRoom, rooms }) {
   function handleFormClose() {
     setShowRoomForm(false);
   }
-
+  console.log(rooms);
   return (
     <>
       <List rooms={rooms} />

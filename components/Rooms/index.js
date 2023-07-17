@@ -1,8 +1,16 @@
-export default function Rooms() {
+export default function Rooms({ rooms }) {
   return (
     <>
       <label htmlFor="rooms">Rooms</label>
-      <span id="rooms">Living Room</span>
+      <select id="rooms">
+        {rooms.map((room) => {
+          return (
+            <option key={room.id} value={room.id}>
+              {room.name}
+            </option>
+          );
+        })}
+      </select>
     </>
   );
 }
