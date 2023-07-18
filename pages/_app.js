@@ -21,8 +21,12 @@ export default function App({ Component, pageProps }) {
   });
 
   function handleCreateRoom(newRoom) {
-    newRoom = { ...newRoom, id: uid() };
-    setRooms([newRoom, ...rooms]);
+    if (rooms.length < 5) {
+      newRoom = { ...newRoom, id: uid() };
+      setRooms([newRoom, ...rooms]);
+    } else {
+      alert("Sorry, there are only five rooms to color");
+    }
   }
 
   function handleDeleteRoom(roomId) {

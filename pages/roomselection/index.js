@@ -17,6 +17,9 @@ export default function RoomSelectionPage({
   function handleFormClose() {
     setShowRoomForm(false);
   }
+
+  const minAmountOfRoomsReached = rooms.length > 0;
+
   return (
     <>
       <List rooms={rooms} handleDeleteRoom={handleDeleteRoom} />
@@ -28,7 +31,9 @@ export default function RoomSelectionPage({
       ) : (
         <button onClick={handleNewRoomClick}>New room</button>
       )}
-      <Link href="/choosecolorpage">Let`s go !</Link>
+      {minAmountOfRoomsReached && (
+        <Link href="/choosecolorpage">Let`s go !</Link>
+      )}
     </>
   );
 }

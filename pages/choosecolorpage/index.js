@@ -4,14 +4,15 @@ import Link from "next/link";
 import styled from "styled-components";
 
 const StyledLink = styled(Link)`
-  padding: 15px 40px;
+  text-align: center;
+  //padding: 15px 40px;
   border: none;
   border-radius: 100px;
   text-decoration: none;
-  height: 70px;
-  width: 250px;
+  height: 60px;
+  width: 200px;
   font-size: 20px;
-  background-color: #bcbdbc;
+  background-color: #e6e6e6;
 `;
 
 const StyledMain = styled.div`
