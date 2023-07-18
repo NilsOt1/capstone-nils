@@ -1,5 +1,7 @@
 import GlobalStyle from "../styles";
 import { useState } from "react";
+import useLocalStorageState from "use-local-storage-state";
+import { uid } from "uid";
 
 export default function App({ Component, pageProps }) {
   const [color, setColor] = useState({
@@ -14,6 +16,15 @@ export default function App({ Component, pageProps }) {
     }));
   }
 
+  const [rooms, setRooms] = useLocalStorageState("rooms", {
+    defaultValue: [],
+  });
+
+  function handleCreateRoom(newRoom) {
+    newRoom = { ...newRoom, id: uid() };
+    setRooms([newRoom, ...rooms]);
+  }
+
   return (
     <>
       <GlobalStyle />
@@ -21,6 +32,8 @@ export default function App({ Component, pageProps }) {
         {...pageProps}
         color={color}
         handleColorChange={handleColorChange}
+        rooms={rooms}
+        handleCreateRoom={handleCreateRoom}
       />
     </>
   );

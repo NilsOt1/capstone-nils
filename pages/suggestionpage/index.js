@@ -4,12 +4,12 @@ import { StyledContainer } from "@/components/SuggestedColor/styles";
 import MainColor from "@/components/MainColor";
 import BackButton from "@/components/BackButton";
 
-export default function SuggestionPage({ color, handleColorChange }) {
+export default function SuggestionPage({ color, handleColorChange, rooms }) {
   return (
     <>
       <StyledContainer>
         <BackButton />
-        <Rooms />
+        <Rooms rooms={rooms} />
         <MainColor
           color={color}
           handleColorChange={handleColorChange}
