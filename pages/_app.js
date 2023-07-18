@@ -17,12 +17,17 @@ export default function App({ Component, pageProps }) {
   }
 
   const [rooms, setRooms] = useLocalStorageState("rooms", {
-    defaultValue: [],
+    defaultValue: [{ name: "Living room", id: 1 }],
   });
 
   function handleCreateRoom(newRoom) {
     newRoom = { ...newRoom, id: uid() };
     setRooms([newRoom, ...rooms]);
+  }
+
+  function handleDeleteRoom(roomId) {
+    const updatedRooms = rooms.filter((room) => room.id !== roomId);
+    setRooms(updatedRooms);
   }
 
   return (
@@ -34,6 +39,7 @@ export default function App({ Component, pageProps }) {
         handleColorChange={handleColorChange}
         rooms={rooms}
         handleCreateRoom={handleCreateRoom}
+        handleDeleteRoom={handleDeleteRoom}
       />
     </>
   );
