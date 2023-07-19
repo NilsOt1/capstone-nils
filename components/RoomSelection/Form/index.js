@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 export default function RoomSelectionForm({ onCreateRoom }) {
   function handleSubmit(event) {
     event.preventDefault();
@@ -8,12 +10,32 @@ export default function RoomSelectionForm({ onCreateRoom }) {
   }
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Add new room</h2>
-      <label htmlFor="roomName">
+      <StyledHeading>Add new room</StyledHeading>
+      <StyledLabel htmlFor="roomName">
         Room Name
         <input type="text" id="name" name="name" required></input>
-      </label>
-      <button type="submit">Create room</button>
+      </StyledLabel>
+      <StyledCreateButton type="submit">Create room</StyledCreateButton>
     </form>
   );
 }
+
+const StyledHeading = styled.h2`
+  text-align: center;
+`;
+
+const StyledCreateButton = styled.button`
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  height: 60px;
+  width: 75px;
+  font-size: 18px;
+`;
+
+const StyledLabel = styled.label`
+  display: flex;
+  justify-content: center;
+`;
