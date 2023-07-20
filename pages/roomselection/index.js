@@ -36,9 +36,6 @@ export default function RoomSelectionPage({
           New room +
         </StyledNewRoomButton>
       )}
-      {minAmountOfRoomsReached && (
-        <StyledLetsGoLink href="/choosecolorpage">Let`s go !</StyledLetsGoLink>
-      )}
     </>
   );
 }

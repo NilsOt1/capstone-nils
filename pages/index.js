@@ -18,4 +18,13 @@ const StyledHeading = styled.h1`
 const StyledLink = styled(Link)`
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin: auto;
+  border: none;
+  border-radius: 100px;
+  text-decoration: none;
+  height: 60px;
+  width: 200px;
+  font-size: 20px;
+  background-color: #e6e6e6;
 `;

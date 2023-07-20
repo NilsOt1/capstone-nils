@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Link from "next/link";
 
 export default function ListItem({ room, children, handleDeleteRoom }) {
   function handleDeleteClick() {
@@ -7,7 +8,10 @@ export default function ListItem({ room, children, handleDeleteRoom }) {
   return (
     <StyledSpan>
       <StyledDeleteButton onClick={handleDeleteClick}>X</StyledDeleteButton>
-      <StyledListItem>{children}</StyledListItem>
+      <Link href={`/choosecolorpage/${room.id}`}>
+        {" "}
+        <StyledListItem>{children}</StyledListItem>
+      </Link>
     </StyledSpan>
   );
 }

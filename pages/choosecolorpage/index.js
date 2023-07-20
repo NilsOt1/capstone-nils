@@ -1,5 +1,4 @@
 import MainColor from "@/components/MainColor";
-import Rooms from "@/components/Rooms";
 import Link from "next/link";
 import styled from "styled-components";
 
@@ -25,7 +24,6 @@ const StyledMain = styled.div`
 export default function ChooseColor({ color, handleColorChange, rooms }) {
   return (
     <StyledMain>
-      <Rooms rooms={rooms} />
       <MainColor color={color} handleColorChange={handleColorChange} />
       <StyledLink href="/suggestionpage">Color Me!</StyledLink>
     </StyledMain>
