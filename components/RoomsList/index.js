@@ -1,7 +1,7 @@
 import ListItem from "./ListItem";
 import styled from "styled-components";
 
-export default function List({ rooms, handleDeleteRoom }) {
+export default function RoomsList({ rooms, handleDeleteRoom }) {
   return (
     <>
       <StyledHeading>Rooms</StyledHeading>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function RoomSelectionForm({ onCreateRoom }) {
+export default function NewRoomForm({ onCreateRoom }) {
   function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);

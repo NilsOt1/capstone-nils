@@ -8,8 +8,7 @@ export default function ListItem({ room, children, handleDeleteRoom }) {
   return (
     <StyledSpan>
       <StyledDeleteButton onClick={handleDeleteClick}>X</StyledDeleteButton>
-      <Link href={`/choosecolorpage/${room.id}`}>
-        {" "}
+      <Link href={`/newchoosecolorpage/${room.id}`}>
         <StyledListItem>{children}</StyledListItem>
       </Link>
     </StyledSpan>

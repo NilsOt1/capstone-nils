@@ -1,5 +1,5 @@
-import RoomSelectionForm from "@/components/RoomSelection/Form";
-import List from "@/components/RoomList";
+import NewRoomForm from "@/components/AddNewRoom/Form";
+import RoomsList from "@/components/RoomsList";
 import { useState } from "react";
 import Link from "next/link";
 import styled from "styled-components";
@@ -19,14 +19,12 @@ export default function RoomSelectionPage({
     setShowRoomForm(false);
   }
 
-  const minAmountOfRoomsReached = rooms.length > 0;
-
   return (
     <>
-      <List rooms={rooms} handleDeleteRoom={handleDeleteRoom} />
+      <RoomsList rooms={rooms} handleDeleteRoom={handleDeleteRoom} />
       {showRoomForm ? (
         <>
-          <RoomSelectionForm onCreateRoom={handleCreateRoom} />
+          <NewRoomForm onCreateRoom={handleCreateRoom} />
           <StyledCancleButton onClick={handleFormClose}>
             Cancle
           </StyledCancleButton>
