@@ -24,37 +24,46 @@ const StyledMain = styled.div`
   margin-left: 30px;
 `;
 
-export default function NewChooseColorPage({
-  rooms,
-  color,
-  handleColorChange,
-  handleSetColor,
-}) {
+export default function NewChooseColorPage({ rooms, handleSetColor }) {
   const router = useRouter();
   const { id } = router.query;
 
   const currentRoom = rooms.find((room) => room.id === id);
-
   if (!currentRoom) {
-    return null;
+    return;
   }
-  console.log(handleSetColor);
 
   return (
     <>
       <StyledMain>
         <BackButton />
         <MainColor
-          color={color}
+          colors={currentRoom.colors}
           handleSetColor={handleSetColor}
-          handleColorChange={handleColorChange}
           id={id}
         />
         <StyledLink href="/suggestionpage">Color Me!</StyledLink>
       </StyledMain>
       <StyledContainer>
-        <SuggestedColor color={color.color1}>Color Suggestion 1</SuggestedColor>
-        <SuggestedColor color={color.color2}>Color Suggestion 2</SuggestedColor>
+        <SuggestedColor
+          key={currentRoom.colors.color1}
+          color={currentRoom.colors.color1}
+        >
+          Color Suggestion 1: {currentRoom.colors.color1}
+        </SuggestedColor>
+        <SuggestedColor
+          key={currentRoom.colors.color2}
+          color={currentRoom.colors.color2}
+        >
+          Color Suggestion 2: {currentRoom.colors.color2}
+        </SuggestedColor>
+        <SuggestedColor
+          key={currentRoom.colors.color3}
+          color={currentRoom.colors.color3}
+        >
+          Color Suggestion 3: {currentRoom.colors.color3}
+        </SuggestedColor>
+        )
       </StyledContainer>
     </>
   );

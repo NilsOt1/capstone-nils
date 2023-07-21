@@ -4,18 +4,7 @@ import { uid } from "uid";
 
 export default function App({ Component, pageProps }) {
   const [rooms, setRooms] = useLocalStorageState("rooms", {
-    defaultValue: [
-      {
-        name: "Living room",
-        id: "1",
-        colors: [{ color1: "#C33737", color2: "#4287A9", color3: "#2F933A" }],
-      },
-    ],
-  });
-  console.log(rooms);
-
-  const [color, setColor] = useLocalStorageState("colors", {
-    defaultValue: { color1: "#C33737", color2: "#4287A9", color3: "#2F933A" },
+    defaultValue: [],
   });
 
   function handleSetColor(id, colors) {
@@ -26,17 +15,13 @@ export default function App({ Component, pageProps }) {
     );
   }
 
-  function handleColorChange(id, value) {
-    console.log(value);
-    setColor((prevColor) => ({
-      ...prevColor,
-      [id]: value,
-    }));
-  }
-
   function handleCreateRoom(newRoom) {
     if (rooms.length < 5) {
-      newRoom = { ...newRoom, id: uid() };
+      newRoom = {
+        ...newRoom,
+        id: uid(),
+        colors: { color1: "#000", color2: "#000", color3: "#000" },
+      };
       setRooms([newRoom, ...rooms]);
     } else {
       alert("Sorry, there are only five rooms to color");
@@ -53,8 +38,6 @@ export default function App({ Component, pageProps }) {
       <GlobalStyle />
       <Component
         {...pageProps}
-        color={color}
-        handleColorChange={handleColorChange}
         rooms={rooms}
         handleCreateRoom={handleCreateRoom}
         handleDeleteRoom={handleDeleteRoom}
