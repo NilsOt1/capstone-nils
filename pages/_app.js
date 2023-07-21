@@ -12,7 +12,6 @@ export default function App({ Component, pageProps }) {
       },
     ],
   });
-  console.log(rooms);
 
   const [color, setColor] = useLocalStorageState("colors", {
     defaultValue: { color1: "#C33737", color2: "#4287A9", color3: "#2F933A" },

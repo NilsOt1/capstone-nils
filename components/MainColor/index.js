@@ -5,7 +5,6 @@ export default function MainColor({
   id,
   handleSetColor,
   handleColorChange,
-  disabled,
 }) {
   const MainColors = [
     { id: "color1", text: "Color1", name: "color1" },
