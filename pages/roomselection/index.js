@@ -1,7 +1,6 @@
 import NewRoomForm from "@/components/AddNewRoom/Form";
 import RoomsList from "@/components/RoomsList";
 import { useState } from "react";
-import Link from "next/link";
 import styled from "styled-components";
 
 export default function RoomSelectionPage({
@@ -45,20 +44,6 @@ const StyledNewRoomButton = styled.button`
   text-decoration: none;
   height: 50px;
   width: 150px;
-  font-size: 20px;
-  background-color: #e6e6e6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const StyledLetsGoLink = styled(Link)`
-  margin: auto;
-  border: none;
-  border-radius: 100px;
-  text-decoration: none;
-  height: 60px;
-  width: 200px;
   font-size: 20px;
   background-color: #e6e6e6;
   display: flex;

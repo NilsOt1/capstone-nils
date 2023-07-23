@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { StyledInput, StyledDiv, StyledLabel } from "./styles";
+import {
+  StyledInput,
+  StyledDiv,
+  StyledLabel,
+  StyledButton,
+  StyledForm,
+} from "./styles";
 
 export default function MainColor({ colors, id, handleSetColor }) {
   const [selectedColors, setSelectedColors] = useState(colors);
@@ -18,11 +24,10 @@ export default function MainColor({ colors, id, handleSetColor }) {
 
   return (
     <StyledDiv>
-      <form onSubmit={handleSubmit}>
+      <StyledForm onSubmit={handleSubmit}>
         {Object.keys(colors).map((color, index) => {
           return (
             <StyledLabel key={index + color} htmlFor={`input-${index}`}>
-              Color is {color}
               <StyledInput
                 type="color"
                 id={`input-${id}`}
@@ -33,8 +38,8 @@ export default function MainColor({ colors, id, handleSetColor }) {
             </StyledLabel>
           );
         })}
-        <button type="submit">set colors</button>
-      </form>
+        <StyledButton type="submit">set colors</StyledButton>
+      </StyledForm>
     </StyledDiv>
   );
 }
