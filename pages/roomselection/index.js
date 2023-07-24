@@ -24,9 +24,9 @@ export default function RoomSelectionPage({
       {showRoomForm ? (
         <>
           <NewRoomForm onCreateRoom={handleCreateRoom} />
-          <StyledCancleButton onClick={handleFormClose}>
-            Cancle
-          </StyledCancleButton>
+          <StyledCancelButton onClick={handleFormClose}>
+            Cancel
+          </StyledCancelButton>
         </>
       ) : (
         <StyledNewRoomButton onClick={handleNewRoomClick}>
@@ -51,7 +51,7 @@ const StyledNewRoomButton = styled.button`
   align-items: center;
 `;
 
-const StyledCancleButton = styled.button`
+const StyledCancelButton = styled.button`
   border-radius: 20px;
   display: flex;
   justify-content: center;

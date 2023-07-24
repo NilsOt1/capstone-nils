@@ -13,7 +13,13 @@ export default function NewRoomForm({ onCreateRoom }) {
       <StyledHeading>Add new room</StyledHeading>
       <StyledLabel htmlFor="roomName">
         Room Name
-        <input type="text" id="name" name="name" required></input>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          maxLength={18}
+          required
+        ></input>
       </StyledLabel>
       <StyledCreateButton type="submit">Create room</StyledCreateButton>
     </form>

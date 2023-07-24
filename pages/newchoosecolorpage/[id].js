@@ -46,18 +46,9 @@ export default function NewChooseColorPage({ rooms, handleSetColor }) {
         </StyledInputSpan>
       </StyledMain>
       <StyledContainer>
-        <SuggestedColor
-          key={currentRoom.colors.color1}
-          color={currentRoom.colors.color1}
-        ></SuggestedColor>
-        <SuggestedColor
-          key={currentRoom.colors.color2}
-          color={currentRoom.colors.color2}
-        ></SuggestedColor>
-        <SuggestedColor
-          key={currentRoom.colors.color3}
-          color={currentRoom.colors.color3}
-        ></SuggestedColor>
+        <SuggestedColor color={currentRoom.colors.color1}></SuggestedColor>
+        <SuggestedColor color={currentRoom.colors.color2}></SuggestedColor>
+        <SuggestedColor color={currentRoom.colors.color3}></SuggestedColor>
       </StyledContainer>
     </>
   );
