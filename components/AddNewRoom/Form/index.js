@@ -15,7 +15,7 @@ export default function NewRoomForm({ onCreateRoom }) {
         Room Name
         <input
           type="text"
-          id="name"
+          id="roomName"
           name="name"
           maxLength={18}
           required
