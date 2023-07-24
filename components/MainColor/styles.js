@@ -5,13 +5,27 @@ export const StyledLabel = styled.label`
   text-align: center;
 `;
 export const StyledInput = styled.input`
-  width: 90px;
+  margin-top: 8px;
+  border: none;
   height: 100px;
-  padding: 5px;
-  margin: 10px 20px;
-  border-radius: 20px;
-  background-color: lightgray;
+  width: 33%;
+  max-width: 200px;
 `;
+
 export const StyledDiv = styled.div`
-  display: flex;
+  margin-top: 20px;
+`;
+
+export const StyledButton = styled.button`
+  border: none;
+  border-radius: 100px;
+  margin: 20px;
+  text-decoration: none;
+  height: 40px;
+  width: 120px;
+  font-size: 20px;
+  background-color: #e6e6e6;
+`;
+export const StyledForm = styled.form`
+  text-align: center;
 `;

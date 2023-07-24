@@ -1,9 +1,10 @@
 import ListItem from "./ListItem";
+import styled from "styled-components";
 
-export default function List({ rooms, handleDeleteRoom }) {
+export default function RoomsList({ rooms, handleDeleteRoom }) {
   return (
     <>
-      <h1>Rooms</h1>
+      <StyledHeading>Rooms</StyledHeading>
       <ul>
         {rooms.map((room) => {
           return (
@@ -20,3 +21,7 @@ export default function List({ rooms, handleDeleteRoom }) {
     </>
   );
 }
+
+const StyledHeading = styled.h1`
+  text-align: center;
+`;

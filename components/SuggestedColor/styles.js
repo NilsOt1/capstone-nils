@@ -2,14 +2,15 @@ import styled from "styled-components";
 
 export const StyledSuggestion = styled.div`
   background-color: ${(props) => props.color};
-  margin: 20px;
-  height: 150px;
+  margin: 10px;
+  width: 33%;
+  height: 200px;
   border-radius: 30px;
 `;
 
 export const StyledContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   margin: 20px;
 `;

@@ -5,7 +5,7 @@ export default function HomePage() {
   return (
     <>
       <StyledHeading>ColorUp</StyledHeading>
-      <Link href="/roomselection">Let`s Go!</Link>
+      <StyledLink href="/roomselection">Let`s Go!</StyledLink>
     </>
   );
 }
@@ -13,4 +13,18 @@ export default function HomePage() {
 const StyledHeading = styled.h1`
   text-align: center;
   padding: 20px;
+`;
+
+const StyledLink = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border: none;
+  border-radius: 100px;
+  text-decoration: none;
+  height: 60px;
+  width: 200px;
+  font-size: 20px;
+  background-color: #e6e6e6;
 `;

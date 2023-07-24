@@ -1,28 +1,27 @@
 import GlobalStyle from "../styles";
-import { useState } from "react";
 import useLocalStorageState from "use-local-storage-state";
 import { uid } from "uid";
 
 export default function App({ Component, pageProps }) {
-  const [color, setColor] = useState({
-    color1: "#C33737",
-    color2: "#4287A9",
-    color3: "#2F933A",
-  });
-  function handleColorChange(id, value) {
-    setColor((prevColor) => ({
-      ...prevColor,
-      [id]: value,
-    }));
-  }
-
   const [rooms, setRooms] = useLocalStorageState("rooms", {
-    defaultValue: [{ name: "Living room", id: 1 }],
+    defaultValue: [],
   });
+
+  function handleSetColor(id, colors) {
+    setRooms((prevRooms) =>
+      prevRooms.map((room) =>
+        room.id === id ? { ...room, colors: colors } : room
+      )
+    );
+  }
 
   function handleCreateRoom(newRoom) {
     if (rooms.length < 5) {
-      newRoom = { ...newRoom, id: uid() };
+      newRoom = {
+        ...newRoom,
+        id: uid(),
+        colors: { color1: "#fff", color2: "#fff", color3: "#fff" },
+      };
       setRooms([newRoom, ...rooms]);
     } else {
       alert("Sorry, there are only five rooms to color");
@@ -39,11 +38,10 @@ export default function App({ Component, pageProps }) {
       <GlobalStyle />
       <Component
         {...pageProps}
-        color={color}
-        handleColorChange={handleColorChange}
         rooms={rooms}
         handleCreateRoom={handleCreateRoom}
         handleDeleteRoom={handleDeleteRoom}
+        handleSetColor={handleSetColor}
       />
     </>
   );
