@@ -1,7 +1,7 @@
 import NewRoomForm from "@/components/AddNewRoom/Form";
+import Button from "@/components/Button";
 import RoomsList from "@/components/RoomsList";
 import { useState } from "react";
-import styled from "styled-components";
 
 export default function RoomSelectionPage({
   rooms,
@@ -24,40 +24,11 @@ export default function RoomSelectionPage({
       {showRoomForm ? (
         <>
           <NewRoomForm onCreateRoom={handleCreateRoom} />
-          <StyledCancelButton onClick={handleFormClose}>
-            Cancel
-          </StyledCancelButton>
+          <Button onClick={handleFormClose} text="Cancel" type="button" />
         </>
       ) : (
-        <StyledNewRoomButton onClick={handleNewRoomClick}>
-          New room +
-        </StyledNewRoomButton>
+        <Button onClick={handleNewRoomClick} text="New room" type="button" />
       )}
     </>
   );
 }
-
-const StyledNewRoomButton = styled.button`
-  margin: 15px;
-  border: none;
-  border-radius: 100px;
-  text-decoration: none;
-  height: 50px;
-  width: 150px;
-  font-size: 20px;
-  background-color: #e6e6e6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const StyledCancelButton = styled.button`
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px auto 50px auto;
-  height: 30px;
-  width: 75px;
-  font-size: 18px;
-`;
