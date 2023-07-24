@@ -38,7 +38,7 @@ export default function MainColor({ colors, id, handleSetColor }) {
             </StyledLabel>
           );
         })}
-        <StyledButton type="submit">set colors</StyledButton>
+        <StyledButton type="submit">Color ME!</StyledButton>
       </StyledForm>
     </StyledDiv>
   );
