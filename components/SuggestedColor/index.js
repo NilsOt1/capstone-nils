@@ -1,7 +1,8 @@
 import { StyledSuggestion } from "./styles";
 import tinycolor from "tinycolor2";
+import { useState } from "react";
 
-export default function SuggestedColor({ children, color }) {
+export default function SuggestedColor({ color }) {
   const rgbColor = tinycolor(color).toRgbString();
   const tinyColor = tinycolor(rgbColor);
 
@@ -11,7 +12,15 @@ export default function SuggestedColor({ children, color }) {
     color.toHexString()
   );
 
+  const [hexVisible, setHexVisible] = useState(true);
+
+  function toggleColorInfo() {
+    setHexVisible(!hexVisible);
+  }
+
   return (
-    <StyledSuggestion color={suggestedColors[1]}>{children}</StyledSuggestion>
+    <StyledSuggestion color={suggestedColors[1]} onClick={toggleColorInfo}>
+      {hexVisible ? suggestedColors[1] : ""}
+    </StyledSuggestion>
   );
 }

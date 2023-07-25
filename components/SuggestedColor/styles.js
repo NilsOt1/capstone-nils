@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const StyledSuggestion = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: ${(props) => props.color};
   margin: 10px;
   width: 33%;

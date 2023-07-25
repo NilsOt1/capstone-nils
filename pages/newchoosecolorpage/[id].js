@@ -99,7 +99,7 @@ export default function NewChooseColorPage({ rooms, handleSetColor }) {
   return (
     <>
       {showInfo && (
-        <InfoText show={showInfo} onClick={handleCloseInfo}>
+        <InfoText show={showInfo.toString()} onClick={handleCloseInfo}>
           How to ColorUP - It`s a piece of cake. You simply choose three colors
           that are very prominent in your room and then press the button.
         </InfoText>
