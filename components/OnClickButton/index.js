@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import { Roboto } from "@next/font/google";
 
-export default function Button({ type, text, onClick }) {
+export default function OnClickButton({ type, text, onClick }) {
   return (
-    <StyledButton type={type} onClick={onClick}>
-      {text}
-    </StyledButton>
+    <>
+      <StyledButton type={type} onClick={onClick}>
+        {text}
+      </StyledButton>
+    </>
   );
 }
 
