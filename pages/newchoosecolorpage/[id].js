@@ -3,13 +3,33 @@ import MainColor from "@/components/MainColor";
 import styled from "styled-components";
 import { StyledContainer } from "@/components/SuggestedColor/styles";
 import SuggestedColor from "@/components/SuggestedColor";
-import Button from "@/components/Button";
+import OnClickButton from "@/components/OnClickButton";
+import { Button, notification } from "antd";
+
+const StyledButtonContainer = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 10px 20px 0 0;
+`;
+
+const StyledRoomTitle = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: solid 1px #adadad;
+  border-radius: 10px;
+  margin: 10px auto;
+  height: 40px;
+  width: 80%;
+  font-size: 20px;
+  background-color: #fff;
+`;
 
 const StyledMain = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 20% 1fr;
-  gap: 10px;
+  display: flex;
+  flex-direction: column;
 `;
 export const StyledInputSpan = styled.span`
   grid-area: 2 / 1 / 3 / 4;
@@ -37,10 +57,26 @@ export default function NewChooseColorPage({ rooms, handleSetColor }) {
     router.back();
   }
 
+  const [api, contextHolder] = notification.useNotification();
+  const openNotificationWithIcon = (type) => {
+    api[type]({
+      message: "How to ColorUP",
+      duration: "12",
+      description:
+        "It's a piece of cake. You simply choose three colors that are very prominent in your room or that frequently appear in your room, and then press the button.",
+    });
+  };
+
   return (
     <>
+      <StyledRoomTitle>{currentRoom.name}</StyledRoomTitle>
       <StyledMain>
-        <Button type="button" onClick={handleGoBack} text="back" />
+        {contextHolder}
+        <StyledButtonContainer>
+          <Button onClick={() => openNotificationWithIcon("info")}>i</Button>{" "}
+        </StyledButtonContainer>
+
+        <OnClickButton type="button" onClick={handleGoBack} text="back" />
         <StyledInputSpan>
           <MainColor
             colors={currentRoom.colors}

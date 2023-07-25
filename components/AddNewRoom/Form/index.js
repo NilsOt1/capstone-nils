@@ -1,4 +1,4 @@
-import Button from "@/components/Button";
+import OnClickButton from "@/components/OnClickButton";
 import styled from "styled-components";
 
 export default function NewRoomForm({ onCreateRoom }) {
@@ -22,7 +22,7 @@ export default function NewRoomForm({ onCreateRoom }) {
           required
         ></input>
       </StyledLabel>
-      <Button type="submit" text="Create Room" />
+      <OnClickButton type="submit" text="Create Room" />
     </form>
   );
 }
