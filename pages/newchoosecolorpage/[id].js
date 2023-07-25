@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { StyledContainer } from "@/components/SuggestedColor/styles";
 import SuggestedColor from "@/components/SuggestedColor";
 import OnClickButton from "@/components/OnClickButton";
-import { Button, notification } from "antd";
+import { Button, notification, Space } from "antd";
 
 const StyledButtonContainer = styled.span`
   display: flex;
@@ -72,8 +72,11 @@ export default function NewChooseColorPage({ rooms, handleSetColor }) {
       <StyledRoomTitle>{currentRoom.name}</StyledRoomTitle>
       <StyledMain>
         {contextHolder}
+
         <StyledButtonContainer>
-          <Button onClick={() => openNotificationWithIcon("info")}>i</Button>{" "}
+          <Space>
+            <Button onClick={() => openNotificationWithIcon("info")}>i</Button>{" "}
+          </Space>
         </StyledButtonContainer>
 
         <OnClickButton type="button" onClick={handleGoBack} text="back" />
