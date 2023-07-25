@@ -2,8 +2,8 @@ import { useRouter } from "next/router";
 import MainColor from "@/components/MainColor";
 import styled from "styled-components";
 import { StyledContainer } from "@/components/SuggestedColor/styles";
-import BackButton from "@/components/BackButton";
 import SuggestedColor from "@/components/SuggestedColor";
+import Button from "@/components/Button";
 
 const StyledMain = styled.div`
   display: grid;
@@ -33,10 +33,14 @@ export default function NewChooseColorPage({ rooms, handleSetColor }) {
     return null;
   }
 
+  function handleGoBack() {
+    router.back();
+  }
+
   return (
     <>
       <StyledMain>
-        <BackButton />
+        <Button type="button" onClick={handleGoBack} text="back" />
         <StyledInputSpan>
           <MainColor
             colors={currentRoom.colors}

@@ -1,3 +1,4 @@
+import Button from "@/components/Button";
 import styled from "styled-components";
 
 export default function NewRoomForm({ onCreateRoom }) {
@@ -21,24 +22,13 @@ export default function NewRoomForm({ onCreateRoom }) {
           required
         ></input>
       </StyledLabel>
-      <StyledCreateButton type="submit">Create room</StyledCreateButton>
+      <Button type="submit" text="Create Room" />
     </form>
   );
 }
 
 const StyledHeading = styled.h2`
   text-align: center;
-`;
-
-const StyledCreateButton = styled.button`
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px auto;
-  height: 60px;
-  width: 75px;
-  font-size: 18px;
 `;
 
 const StyledLabel = styled.label`

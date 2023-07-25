@@ -1,11 +1,6 @@
 import { useState } from "react";
-import {
-  StyledInput,
-  StyledDiv,
-  StyledLabel,
-  StyledButton,
-  StyledForm,
-} from "./styles";
+import { StyledInput, StyledDiv, StyledLabel, StyledForm } from "./styles";
+import Button from "../Button";
 
 export default function MainColor({ colors, id, handleSetColor }) {
   const [selectedColors, setSelectedColors] = useState(colors);
@@ -38,7 +33,7 @@ export default function MainColor({ colors, id, handleSetColor }) {
             </StyledLabel>
           );
         })}
-        <StyledButton type="submit">set colors</StyledButton>
+        <Button type="submit" text="Color Me!" />
       </StyledForm>
     </StyledDiv>
   );
