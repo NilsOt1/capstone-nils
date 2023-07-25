@@ -1,10 +1,38 @@
 import { useRouter } from "next/router";
+import { useState } from "react";
 import MainColor from "@/components/MainColor";
 import styled from "styled-components";
 import { StyledContainer } from "@/components/SuggestedColor/styles";
 import SuggestedColor from "@/components/SuggestedColor";
 import OnClickButton from "@/components/OnClickButton";
-import { Button, notification, Space } from "antd";
+
+const InfoText = styled.div`
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: ${(props) => (props.show ? "block" : "none")};
+
+  &::before {
+    content: "x";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+`;
+
+const InfoButton = styled.button`
+  background-color: #f0f0f0;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+`;
 
 const StyledButtonContainer = styled.span`
   display: flex;
@@ -31,11 +59,22 @@ const StyledMain = styled.div`
   display: flex;
   flex-direction: column;
 `;
-export const StyledInputSpan = styled.span`
-  grid-area: 2 / 1 / 3 / 4;
-`;
 
 export default function NewChooseColorPage({ rooms, handleSetColor }) {
+  const [showInfo, setShowInfo] = useState(false);
+
+  const handleToggleInfo = () => {
+    setShowInfo(true);
+
+    setTimeout(() => {
+      setShowInfo(false);
+    }, 12000);
+  };
+
+  const handleCloseInfo = () => {
+    setShowInfo(false);
+  };
+
   const router = useRouter();
   const { id } = router.query;
 
@@ -57,36 +96,27 @@ export default function NewChooseColorPage({ rooms, handleSetColor }) {
     router.back();
   }
 
-  const [api, contextHolder] = notification.useNotification();
-  const openNotificationWithIcon = (type) => {
-    api[type]({
-      message: "How to ColorUP",
-      duration: "12",
-      description:
-        "It's a piece of cake. You simply choose three colors that are very prominent in your room or that frequently appear in your room, and then press the button.",
-    });
-  };
-
   return (
     <>
+      {showInfo && (
+        <InfoText show={showInfo} onClick={handleCloseInfo}>
+          How to ColorUP - It`s a piece of cake. You simply choose three colors
+          that are very prominent in your room and then press the button.
+        </InfoText>
+      )}
+
       <StyledRoomTitle>{currentRoom.name}</StyledRoomTitle>
       <StyledMain>
-        {contextHolder}
-
         <StyledButtonContainer>
-          <Space>
-            <Button onClick={() => openNotificationWithIcon("info")}>i</Button>{" "}
-          </Space>
+          <InfoButton onClick={handleToggleInfo}>i</InfoButton>
         </StyledButtonContainer>
 
         <OnClickButton type="button" onClick={handleGoBack} text="back" />
-        <StyledInputSpan>
-          <MainColor
-            colors={currentRoom.colors}
-            handleSetColor={handleSetColor}
-            id={id}
-          />
-        </StyledInputSpan>
+        <MainColor
+          colors={currentRoom.colors}
+          handleSetColor={handleSetColor}
+          id={id}
+        />
       </StyledMain>
       <StyledContainer>
         <SuggestedColor color={currentRoom.colors.color1}></SuggestedColor>

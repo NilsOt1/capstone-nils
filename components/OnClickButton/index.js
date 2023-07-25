@@ -3,9 +3,11 @@ import { Roboto } from "@next/font/google";
 
 export default function OnClickButton({ type, text, onClick }) {
   return (
-    <StyledButton type={type} onClick={onClick}>
-      {text}
-    </StyledButton>
+    <>
+      <StyledButton type={type} onClick={onClick}>
+        {text}
+      </StyledButton>
+    </>
   );
 }
 
