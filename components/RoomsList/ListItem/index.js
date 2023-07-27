@@ -1,9 +1,27 @@
 import styled from "styled-components";
 import Link from "next/link";
+import { confirmAlert } from "react-confirm-alert";
+import "react-confirm-alert/src/react-confirm-alert.css";
 
 export default function ListItem({ room, children, handleDeleteRoom }) {
   function handleDeleteClick() {
-    handleDeleteRoom(room.id);
+    confirmAlert({
+      message: "Are you sure you want to delete this room?",
+
+      buttons: [
+        {
+          label: "Yes",
+
+          onClick: () => {
+            handleDeleteRoom(room.id);
+          },
+        },
+
+        {
+          label: "No, I`m not",
+        },
+      ],
+    });
   }
   return (
     <StyledSpan>
