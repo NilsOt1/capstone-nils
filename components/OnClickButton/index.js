@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { Roboto } from "@next/font/google";
 
-export default function OnClickButton({ type, text, onClick }) {
+export default function OnClickButton({ type, children, onClick }) {
   return (
     <>
       <StyledButton type={type} onClick={onClick}>
-        {text}
+        {children}
       </StyledButton>
     </>
   );
@@ -23,7 +23,7 @@ export const StyledButton = styled.button`
   justify-content: center;
   align-items: center;
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
   margin: 10px auto;
   text-decoration: none;
   height: 40px;

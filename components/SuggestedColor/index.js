@@ -12,7 +12,7 @@ export default function SuggestedColor({ color }) {
     color.toHexString()
   );
 
-  const [hexVisible, setHexVisible] = useState(true);
+  const [hexVisible, setHexVisible] = useState(false);
 
   function toggleColorInfo() {
     setHexVisible(!hexVisible);

@@ -2,6 +2,7 @@ import NewRoomForm from "@/components/AddNewRoom/Form";
 import OnClickButton from "@/components/OnClickButton";
 import RoomsList from "@/components/RoomsList";
 import { useState } from "react";
+import { StyledHeading } from "./styles";
 
 export default function RoomSelectionPage({
   rooms,
@@ -13,29 +14,25 @@ export default function RoomSelectionPage({
   function handleNewRoomClick() {
     setShowRoomForm(true);
   }
-
   function handleFormClose() {
     setShowRoomForm(false);
   }
 
   return (
     <>
+      <StyledHeading>Rooms</StyledHeading>
       <RoomsList rooms={rooms} handleDeleteRoom={handleDeleteRoom} />
       {showRoomForm ? (
         <>
-          <NewRoomForm onCreateRoom={handleCreateRoom} />
-          <OnClickButton
-            onClick={handleFormClose}
-            text="Cancel"
-            type="button"
+          <NewRoomForm
+            onCreateRoom={handleCreateRoom}
+            handleFormClose={handleFormClose}
           />
         </>
       ) : (
-        <OnClickButton
-          onClick={handleNewRoomClick}
-          text="New room"
-          type="button"
-        />
+        <OnClickButton onClick={handleNewRoomClick} type="button">
+          New Room
+        </OnClickButton>
       )}
     </>
   );

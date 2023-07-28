@@ -33,7 +33,7 @@ export default function MainColor({ colors, id, handleSetColor }) {
             </StyledLabel>
           );
         })}
-        <OnClickButton type="submit" text="Color Me!" />
+        <OnClickButton type="submit">Color Me!</OnClickButton>
       </StyledForm>
     </StyledDiv>
   );

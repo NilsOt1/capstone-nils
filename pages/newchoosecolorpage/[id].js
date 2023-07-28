@@ -5,6 +5,9 @@ import styled from "styled-components";
 import { StyledContainer } from "@/components/SuggestedColor/styles";
 import SuggestedColor from "@/components/SuggestedColor";
 import OnClickButton from "@/components/OnClickButton";
+import Icon from "@mdi/react";
+import { mdiArrowLeft } from "@mdi/js";
+import { mdiInformationOutline } from "@mdi/js";
 
 const InfoText = styled.div`
   position: absolute;
@@ -28,7 +31,7 @@ const InfoText = styled.div`
 `;
 
 const InfoButton = styled.button`
-  background-color: #f0f0f0;
+  background-color: #fff;
   padding: 8px 16px;
   border: none;
   border-radius: 4px;
@@ -108,10 +111,14 @@ export default function NewChooseColorPage({ rooms, handleSetColor }) {
       <StyledRoomTitle>{currentRoom.name}</StyledRoomTitle>
       <StyledMain>
         <StyledButtonContainer>
-          <InfoButton onClick={handleToggleInfo}>i</InfoButton>
+          <InfoButton onClick={handleToggleInfo}>
+            {<Icon path={mdiInformationOutline} size={1.8} />}
+          </InfoButton>
         </StyledButtonContainer>
 
-        <OnClickButton type="button" onClick={handleGoBack} text="back" />
+        <OnClickButton type="button" onClick={handleGoBack}>
+          <Icon path={mdiArrowLeft} size={1} />
+        </OnClickButton>
         <MainColor
           colors={currentRoom.colors}
           handleSetColor={handleSetColor}
