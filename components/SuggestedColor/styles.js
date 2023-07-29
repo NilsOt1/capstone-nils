@@ -4,11 +4,12 @@ export const StyledSuggestion = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
   background-color: ${(props) => props.color};
-  margin: 10px;
+  margin: 5px;
   width: 33%;
-  height: 200px;
-  border-radius: 30px;
+  height: 250px;
+  border-radius: 20px;
 `;
 
 export const StyledContainer = styled.div`

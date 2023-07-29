@@ -24,4 +24,5 @@ export default function RoomsList({ rooms, handleDeleteRoom }) {
 const StyledUl = styled.ul`
   padding: 0;
   margin-left: 50px;
+  margin-top: 50px;
 `;

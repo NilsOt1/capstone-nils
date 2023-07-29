@@ -22,13 +22,14 @@ export const StyledButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: none;
+  border: solid 0.5px;
   border-radius: 10px;
   margin: 10px auto;
   text-decoration: none;
   height: 40px;
   width: 120px;
   font-size: 20px;
-  background-color: #e6e6e6;
+  background-color: transparent;
+  color: #4f4f4f;
   font-family: ${roboto.style.fontFamily};
 `;

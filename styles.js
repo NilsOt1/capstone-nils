@@ -10,10 +10,6 @@ const roboto = Roboto({
 
 export default createGlobalStyle`
 
-  :root {
-    --background-color: #fff;
-  }
-
   *,
   *::before,
   *::after {
@@ -23,5 +19,12 @@ export default createGlobalStyle`
   body {
     margin: 0;
     font-family: ${roboto.style.fontFamily};
+    background-image: url(/images/markus-spiske.jpg);
+    background-size: 375px 697px;
+    background-position: center -30px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    color: #404040;
+    height: 100vh;
   }
 `;

@@ -1,4 +1,4 @@
-import OnClickButton, { StyledButton } from "@/components/OnClickButton";
+import { StyledButton } from "@/components/OnClickButton";
 import styled from "styled-components";
 
 export default function NewRoomForm({ onCreateRoom, handleFormClose }) {
@@ -51,6 +51,7 @@ const StyledLabel = styled.label`
 
 const StyledInput = styled.input`
   margin-left: 5px;
+  background-color: transparent;
 `;
 
 const StyledButtonsSpan = styled.span`
@@ -63,7 +64,6 @@ const CustomCreateButton = styled(StyledButton)`
   border-radius: 10px;
   padding: 10px;
   margin: 15px 5px;
-  background-color: #fff;
   height: 30px;
   width: 100px;
 `;

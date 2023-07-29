@@ -1,8 +1,8 @@
 import NewRoomForm from "@/components/AddNewRoom/Form";
-import OnClickButton from "@/components/OnClickButton";
 import RoomsList from "@/components/RoomsList";
 import { useState } from "react";
 import { StyledHeading } from "./styles";
+import OnClickButton from "@/components/OnClickButton";
 
 export default function RoomSelectionPage({
   rooms,

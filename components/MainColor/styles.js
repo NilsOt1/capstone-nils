@@ -13,20 +13,18 @@ export const StyledLabel = styled.label`
   text-align: center;
 `;
 export const StyledInput = styled.input`
-  margin-top: 8px;
+  padding: 0;
+  margin: 10px 0px;
   border: none;
-  height: 100px;
+  height: 120px;
   width: 33%;
   max-width: 200px;
-  background-color: var(--background-color);
 `;
 
 export const StyledDiv = styled.div`
   margin-top: 20px;
-  background-color: var(--background-color);
 `;
 
 export const StyledForm = styled.form`
   text-align: center;
-  background-color: var(--background-color);
 `;

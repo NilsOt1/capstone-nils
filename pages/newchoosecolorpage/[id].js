@@ -4,10 +4,9 @@ import MainColor from "@/components/MainColor";
 import styled from "styled-components";
 import { StyledContainer } from "@/components/SuggestedColor/styles";
 import SuggestedColor from "@/components/SuggestedColor";
-import OnClickButton from "@/components/OnClickButton";
+import { StyledButton } from "@/components/OnClickButton";
 import Icon from "@mdi/react";
 import { mdiArrowLeft } from "@mdi/js";
-import { mdiInformationOutline } from "@mdi/js";
 
 const InfoText = styled.div`
   position: absolute;
@@ -31,36 +30,42 @@ const InfoText = styled.div`
 `;
 
 const InfoButton = styled.button`
-  background-color: #fff;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
+  border: solid 0.5px;
+  border-radius: 30px;
+  height: 60px;
+  width: 60px;
+  font-size: 1.5em;
+  font-weight: 100;
+  background-color: transparent;
 `;
 
 const StyledButtonContainer = styled.span`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin: 10px 20px 0 0;
 `;
 
 const StyledRoomTitle = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border: solid 1px #adadad;
-  border-radius: 10px;
-  margin: 10px auto;
-  height: 40px;
-  width: 80%;
-  font-size: 20px;
-  background-color: #fff;
+  text-align: center;
+  font-weight: 300;
+  font-size: 2.3em;
+  margin-top: 40px;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
 `;
 
 const StyledMain = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+const CustomBackButton = styled(StyledButton)`
+  margin: 5px 10px;
+  border: solid 0.5px;
+  border-radius: 30px;
+  height: 60px;
+  width: 60px;
 `;
 
 export default function NewChooseColorPage({ rooms, handleSetColor }) {
@@ -111,14 +116,11 @@ export default function NewChooseColorPage({ rooms, handleSetColor }) {
       <StyledRoomTitle>{currentRoom.name}</StyledRoomTitle>
       <StyledMain>
         <StyledButtonContainer>
-          <InfoButton onClick={handleToggleInfo}>
-            {<Icon path={mdiInformationOutline} size={1.8} />}
-          </InfoButton>
+          <CustomBackButton type="button" onClick={handleGoBack}>
+            <Icon path={mdiArrowLeft} size={1.1} />
+          </CustomBackButton>
+          <InfoButton onClick={handleToggleInfo}>i</InfoButton>
         </StyledButtonContainer>
-
-        <OnClickButton type="button" onClick={handleGoBack}>
-          <Icon path={mdiArrowLeft} size={1} />
-        </OnClickButton>
         <MainColor
           colors={currentRoom.colors}
           handleSetColor={handleSetColor}
