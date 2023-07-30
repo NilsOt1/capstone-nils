@@ -44,6 +44,7 @@ const StyledLink = styled(Link)`
   border: solid 0.5px;
   border-radius: 10px;
   box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
+  color: #4f4f4f;
 
   text-decoration: none;
   height: 60px;

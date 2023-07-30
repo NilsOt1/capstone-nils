@@ -9,10 +9,11 @@ const randomColorArray = [
   "#6c705c",
   "#B46B4B",
   "#5d7e83",
-  "#8B3737",
-  "#D7BD14",
-  "#75AAAE",
+  "#824f4f",
+  "#c2b76e",
+  "#7a9c9e",
   "#E2D283",
+  "#b5b9a6",
 ];
 
 export default function App({ Component, pageProps }) {
