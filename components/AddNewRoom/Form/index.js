@@ -68,7 +68,6 @@ const StyledButtonsSpan = styled.span`
 
 const CustomCreateButton = styled(StyledButton)`
   border: solid 0.5px;
-  /* border-radius: 10px; */
   box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1);
   font-weight: 300;
   padding: 10px;

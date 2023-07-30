@@ -1,11 +1,26 @@
 import GlobalStyle from "../styles";
 import useLocalStorageState from "use-local-storage-state";
+import { useState } from "react";
 import { uid } from "uid";
+
+const randomColorArray = [
+  "#568A5C",
+  "#8d9a5b",
+  "#6c705c",
+  "#B46B4B",
+  "#5d7e83",
+  "#8B3737",
+  "#D7BD14",
+  "#75AAAE",
+  "#E2D283",
+];
 
 export default function App({ Component, pageProps }) {
   const [rooms, setRooms] = useLocalStorageState("rooms", {
     defaultValue: [],
   });
+
+  const [randomColor, setRandomColor] = useState(null);
 
   function handleSetColor(id, colors) {
     setRooms((prevRooms) =>
@@ -13,6 +28,7 @@ export default function App({ Component, pageProps }) {
         room.id === id ? { ...room, colors: colors } : room
       )
     );
+    setRandomColor("");
   }
 
   function handleCreateRoom(newRoom) {
@@ -33,6 +49,16 @@ export default function App({ Component, pageProps }) {
     setRooms(updatedRooms);
   }
 
+  function getRandomColor() {
+    const randomPick = Math.floor(Math.random() * randomColorArray.length);
+    return randomColorArray[randomPick];
+  }
+
+  function handleRandomClick() {
+    const randomisedColor = getRandomColor();
+    setRandomColor(randomisedColor);
+  }
+
   return (
     <>
       <GlobalStyle />
@@ -42,6 +68,8 @@ export default function App({ Component, pageProps }) {
         handleCreateRoom={handleCreateRoom}
         handleDeleteRoom={handleDeleteRoom}
         handleSetColor={handleSetColor}
+        randomColor={randomColor}
+        handleRandomClick={handleRandomClick}
       />
     </>
   );

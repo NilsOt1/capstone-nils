@@ -16,6 +16,14 @@ const roboto = Roboto({
   display: "swap",
 });
 
+// const randomColorArray = [
+//   "#9fb937",
+//   "#8d9a5b",
+//   "#6c705c",
+//   "#a2449e",
+//   "#5d7e83",
+// ];
+
 const InfoText = styled.div`
   position: absolute;
   top: 40px;
@@ -79,7 +87,19 @@ const CustomBackButton = styled(StyledButton)`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
-export default function NewChooseColorPage({ rooms, handleSetColor }) {
+const StyledRandomButton = styled(StyledButton)`
+  border: solid 1px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: underline;
+  text-decoration-thickness: 0.5px;
+`;
+
+export default function NewChooseColorPage({
+  rooms,
+  handleSetColor,
+  randomColor,
+  handleRandomClick,
+}) {
   const [showInfo, setShowInfo] = useState(false);
 
   const handleToggleInfo = () => {
@@ -130,6 +150,9 @@ export default function NewChooseColorPage({ rooms, handleSetColor }) {
           <CustomBackButton type="button" onClick={handleGoBack}>
             <Icon path={mdiArrowLeft} size={1.1} />
           </CustomBackButton>
+          <StyledRandomButton onClick={handleRandomClick}>
+            Inspiration
+          </StyledRandomButton>
           <InfoButton onClick={handleToggleInfo}>i</InfoButton>
         </StyledButtonContainer>
         <MainColor
@@ -139,9 +162,18 @@ export default function NewChooseColorPage({ rooms, handleSetColor }) {
         />
       </StyledMain>
       <StyledContainer>
-        <SuggestedColor color={currentRoom.colors.color1}></SuggestedColor>
-        <SuggestedColor color={currentRoom.colors.color2}></SuggestedColor>
-        <SuggestedColor color={currentRoom.colors.color3}></SuggestedColor>
+        <SuggestedColor
+          color={currentRoom.colors.color1}
+          randomColor={randomColor}
+        ></SuggestedColor>
+        <SuggestedColor
+          color={currentRoom.colors.color2}
+          randomColor={randomColor}
+        ></SuggestedColor>
+        <SuggestedColor
+          color={currentRoom.colors.color3}
+          randomColor={randomColor}
+        ></SuggestedColor>
       </StyledContainer>
     </>
   );
