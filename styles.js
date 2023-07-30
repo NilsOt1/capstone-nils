@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import { Roboto } from "@next/font/google";
 
 const roboto = Roboto({
-  weight: ["100", "900"],
+  weight: ["100", "300", "400", "500", "700", "900"],
   style: ["normal", "italic"],
   subsets: ["latin"],
   display: "swap",
@@ -19,12 +19,11 @@ export default createGlobalStyle`
   body {
     margin: 0;
     font-family: ${roboto.style.fontFamily};
-    background-image: url(/images/markus-spiske.jpg);
-    background-size: 375px 697px;
-    background-position: center -30px;
+    font-weight: 100;
+    background-image: url(/images/markus-spiske2.jpg);
+    background-size: 375px 667px;
     background-repeat: no-repeat;
     background-color: transparent;
-    color: #404040;
-    height: 100vh;
-  }
+    color: #4f4f4f;
+    }
 `;

@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { StyledInput, StyledDiv, StyledLabel, StyledForm } from "./styles";
+import {
+  StyledInput,
+  StyledDiv,
+  StyledLabel,
+  StyledForm,
+  StyledColorButton,
+} from "./styles";
 import OnClickButton from "../OnClickButton";
 
 export default function MainColor({ colors, id, handleSetColor }) {
@@ -33,7 +39,7 @@ export default function MainColor({ colors, id, handleSetColor }) {
             </StyledLabel>
           );
         })}
-        <OnClickButton type="submit">Color Me!</OnClickButton>
+        <StyledColorButton type="submit">Color Me!</StyledColorButton>
       </StyledForm>
     </StyledDiv>
   );

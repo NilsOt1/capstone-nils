@@ -12,7 +12,7 @@ export default function OnClickButton({ type, children, onClick }) {
 }
 
 const roboto = Roboto({
-  weight: ["100", "900"],
+  weight: ["100", "300", "400", "500", "700", "900"],
   style: ["normal", "italic"],
   subsets: ["latin"],
   display: "swap",
@@ -29,6 +29,7 @@ export const StyledButton = styled.button`
   height: 40px;
   width: 120px;
   font-size: 20px;
+  font-weight: 100;
   background-color: transparent;
   color: #4f4f4f;
   font-family: ${roboto.style.fontFamily};

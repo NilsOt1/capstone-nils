@@ -11,7 +11,7 @@ export default function NewRoomForm({ onCreateRoom, handleFormClose }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <StyledForm onSubmit={handleSubmit}>
       <StyledHeading>Add new room</StyledHeading>
       <StyledLabel htmlFor="roomName">
         Room Name{""}
@@ -29,16 +29,23 @@ export default function NewRoomForm({ onCreateRoom, handleFormClose }) {
           Cancel
         </CustomCreateButton>
       </StyledButtonsSpan>
-    </form>
+    </StyledForm>
   );
 }
+
+const StyledForm = styled.form`
+  padding: 15px;
+  border-bottom: solid 0.5px #000;
+  border-top: solid 0.5px #000;
+  border-radius: 20px;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
+`;
 
 const StyledHeading = styled.h2`
   text-align: center;
   font-weight: 300;
   font-size: 1.6em;
-  border-top: solid 0.5px;
-  padding-top: 15px;
+  margin-top: 5px;
   text-decoration: underline;
   text-decoration-thickness: 1px;
 `;
@@ -61,9 +68,11 @@ const StyledButtonsSpan = styled.span`
 
 const CustomCreateButton = styled(StyledButton)`
   border: solid 0.5px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1);
+  font-weight: 300;
   padding: 10px;
   margin: 15px 5px;
-  height: 30px;
+  height: 40px;
   width: 100px;
 `;

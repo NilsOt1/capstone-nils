@@ -31,7 +31,7 @@ export default function ListItem({ room, children, handleDeleteRoom }) {
         <Icon path={mdiDeleteOutline} size={1.3} weight={100} />
       </StyledDeleteButton>
       <StyledLink href={`/newchoosecolorpage/${room.id}`}>
-        <StyledListItem textColor={room.textColor}>{children}</StyledListItem>
+        <StyledListItem>{children}</StyledListItem>
       </StyledLink>
     </StyledSpan>
   );
@@ -40,11 +40,12 @@ export default function ListItem({ room, children, handleDeleteRoom }) {
 const StyledListItem = styled.li`
   list-style-type: none;
   border: 0.5px solid;
-  border-radius: 9px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1);
+
   padding: 10px 20px;
-  margin: 10px 5px;
+  margin: 5px;
   font-size: 1.3em;
-  color: ${(props) => props.textColor};
 `;
 
 const StyledLink = styled(Link)`
@@ -54,9 +55,7 @@ const StyledLink = styled(Link)`
 
 const StyledDeleteButton = styled.button`
   margin: 5px;
-  padding: 10px;
-  border: 1px;
-  border-radius: 30px;
+  border: none;
   background-color: transparent;
 `;
 

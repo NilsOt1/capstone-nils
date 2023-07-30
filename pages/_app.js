@@ -1,14 +1,11 @@
 import GlobalStyle from "../styles";
 import useLocalStorageState from "use-local-storage-state";
 import { uid } from "uid";
-import { useState } from "react";
 
 export default function App({ Component, pageProps }) {
   const [rooms, setRooms] = useLocalStorageState("rooms", {
     defaultValue: [],
   });
-
-  const [roomCount, setRoomCount] = useState(0);
 
   function handleSetColor(id, colors) {
     setRooms((prevRooms) =>
@@ -25,11 +22,7 @@ export default function App({ Component, pageProps }) {
         id: uid(),
         colors: { color1: "#fff", color2: "#fff", color3: "#fff" },
       };
-
-      newRoom.textColor = roomCount < 2 ? "#fff" : "#000";
-
-      setRooms((prevRooms) => [...prevRooms, newRoom]);
-      setRoomCount(roomCount + 1);
+      setRooms([newRoom, ...rooms]);
     } else {
       alert("Sorry, there are only five rooms to color");
     }
@@ -38,7 +31,6 @@ export default function App({ Component, pageProps }) {
   function handleDeleteRoom(roomId) {
     const updatedRooms = rooms.filter((room) => room.id !== roomId);
     setRooms(updatedRooms);
-    setRoomCount((prevCount) => (prevCount > 0 ? prevCount - 1 : prevCount));
   }
 
   return (

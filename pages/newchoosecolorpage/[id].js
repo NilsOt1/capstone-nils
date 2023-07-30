@@ -7,6 +7,14 @@ import SuggestedColor from "@/components/SuggestedColor";
 import { StyledButton } from "@/components/OnClickButton";
 import Icon from "@mdi/react";
 import { mdiArrowLeft } from "@mdi/js";
+import { Roboto } from "@next/font/google";
+
+const roboto = Roboto({
+  weight: ["100", "300", "400", "500", "700", "900"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 const InfoText = styled.div`
   position: absolute;
@@ -15,7 +23,7 @@ const InfoText = styled.div`
   transform: translateX(-50%);
   padding: 10px;
   background-color: #f0f0f0;
-  border-radius: 4px;
+  border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: ${(props) => (props.show ? "block" : "none")};
 
@@ -35,21 +43,23 @@ const InfoButton = styled.button`
   height: 60px;
   width: 60px;
   font-size: 1.5em;
-  font-weight: 100;
+  font-weight: 300;
   background-color: transparent;
+  font-family: ${roboto.style.fontFamily};
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 `;
 
 const StyledButtonContainer = styled.span`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 10px 20px 0 0;
+  margin: 5px 20px 0 0;
 `;
 
 const StyledRoomTitle = styled.div`
   text-align: center;
-  font-weight: 300;
-  font-size: 2.3em;
+  font-weight: 100;
+  font-size: 3.8em;
   margin-top: 40px;
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -66,6 +76,7 @@ const CustomBackButton = styled(StyledButton)`
   border-radius: 30px;
   height: 60px;
   width: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
 export default function NewChooseColorPage({ rooms, handleSetColor }) {
