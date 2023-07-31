@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function OnClickButton({ type, children, onClick }) {
+export default function MainButton({ type, children, onClick }) {
   return (
     <>
       <StyledButton type={type} onClick={onClick}>

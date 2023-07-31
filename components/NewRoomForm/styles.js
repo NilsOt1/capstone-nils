@@ -1,4 +1,4 @@
-import { StyledButton } from "@/components/OnClickButton";
+import { StyledButton } from "@/components/MainButton";
 import styled from "styled-components";
 
 export const StyledForm = styled.form`

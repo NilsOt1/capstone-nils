@@ -4,7 +4,7 @@ import MainColor from "@/components/MainColor";
 import styled from "styled-components";
 import { StyledContainer } from "@/components/SuggestedColor/styles";
 import SuggestedColor from "@/components/SuggestedColor";
-import { StyledButton } from "@/components/OnClickButton";
+import { StyledButton } from "@/components/MainButton";
 import Icon from "@mdi/react";
 import { mdiArrowLeft } from "@mdi/js";
 

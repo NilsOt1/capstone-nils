@@ -1,7 +1,7 @@
 import NewRoomForm from "@/components/NewRoomForm";
 import RoomsList from "@/components/RoomsList";
 import { useState } from "react";
-import { StyledButton } from "@/components/OnClickButton";
+import { StyledButton } from "@/components/MainButton";
 import styled from "styled-components";
 
 const StyledRoomsHeading = styled.h1`

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { StyledButton } from "../OnClickButton";
+import { StyledButton } from "../MainButton";
 
 export const StyledColorLabel = styled.label`
   margin: 25px 0;
