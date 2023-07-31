@@ -56,6 +56,7 @@ const StyledLink = styled(Link)`
 const StyledDeleteButton = styled.button`
   margin: 5px;
   border: none;
+  box-shadow: none;
 `;
 
 const StyledSpan = styled.span`

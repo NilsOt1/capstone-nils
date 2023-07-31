@@ -25,7 +25,7 @@ const InfoText = styled.div`
     top: 5px;
     right: 5px;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 400;
   }
 `;
 
@@ -48,7 +48,6 @@ const StyledButtonContainer = styled.span`
 
 const StyledRoomTitle = styled.div`
   text-align: center;
-  font-weight: 100;
   font-size: 3.3em;
   margin-top: 40px;
   text-decoration: underline;

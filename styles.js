@@ -29,6 +29,9 @@ export default createGlobalStyle`
 
     button, input {
     font-family: ${roboto.style.fontFamily};
+    font-weight: 100;
     background-color: transparent;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
   }
 `;

@@ -16,11 +16,9 @@ export const StyledButton = styled.button`
   align-items: center;
   border: solid 0.5px;
   border-radius: 10px;
-  margin: 10px auto;
   text-decoration: none;
   height: 40px;
   width: 120px;
   font-size: 20px;
-  font-weight: 100;
   color: #4f4f4f;
 `;
