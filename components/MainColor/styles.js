@@ -1,13 +1,5 @@
 import styled from "styled-components";
-import { Roboto } from "@next/font/google";
 import { StyledButton } from "../OnClickButton";
-
-const roboto = Roboto({
-  weight: ["100", "900"],
-  style: ["normal", "italic"],
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const StyledLabel = styled.label`
   margin: 25px 0;

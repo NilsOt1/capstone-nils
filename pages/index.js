@@ -1,6 +1,5 @@
 import Link from "next/link";
 import styled from "styled-components";
-import { Roboto } from "@next/font/google";
 
 export default function HomePage() {
   return (
@@ -23,7 +22,6 @@ const StyledContainer = styled.div`
   background-size: 375px 737px;
   background-position: center -70px;
   background-repeat: no-repeat;
-  background-color: transparent;
 `;
 
 const StyledHeading = styled.h1`
@@ -50,7 +48,6 @@ const StyledLink = styled(Link)`
   height: 60px;
   width: 200px;
   font-size: 30px;
-  background-color: transparent;
 `;
 
 const StyledUp = styled.span`

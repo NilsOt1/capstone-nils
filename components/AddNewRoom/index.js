@@ -19,7 +19,7 @@ export default function NewRoomForm({ onCreateRoom, handleFormClose }) {
           type="text"
           id="roomName"
           name="name"
-          maxLength={11}
+          maxLength={12}
           required
         ></StyledInput>
       </StyledLabel>
@@ -58,7 +58,6 @@ const StyledLabel = styled.label`
 
 const StyledInput = styled.input`
   margin-left: 5px;
-  background-color: transparent;
 `;
 
 const StyledButtonsSpan = styled.span`

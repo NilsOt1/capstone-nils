@@ -6,7 +6,6 @@ import {
   StyledForm,
   StyledColorButton,
 } from "./styles";
-import OnClickButton from "../OnClickButton";
 
 export default function MainColor({ colors, id, handleSetColor }) {
   const [selectedColors, setSelectedColors] = useState(colors);

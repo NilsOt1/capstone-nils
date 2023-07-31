@@ -56,7 +56,6 @@ const StyledLink = styled(Link)`
 const StyledDeleteButton = styled.button`
   margin: 5px;
   border: none;
-  background-color: transparent;
 `;
 
 const StyledSpan = styled.span`

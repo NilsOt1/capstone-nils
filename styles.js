@@ -26,4 +26,9 @@ export default createGlobalStyle`
     background-color: transparent;
     color: #4f4f4f;
     }
+
+    button, input {
+    font-family: ${roboto.style.fontFamily};
+    background-color: transparent;
+  }
 `;

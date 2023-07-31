@@ -7,14 +7,6 @@ import SuggestedColor from "@/components/SuggestedColor";
 import { StyledButton } from "@/components/OnClickButton";
 import Icon from "@mdi/react";
 import { mdiArrowLeft } from "@mdi/js";
-import { Roboto } from "@next/font/google";
-
-const roboto = Roboto({
-  weight: ["100", "300", "400", "500", "700", "900"],
-  style: ["normal", "italic"],
-  subsets: ["latin"],
-  display: "swap",
-});
 
 const InfoText = styled.div`
   position: absolute;
@@ -44,8 +36,6 @@ const InfoButton = styled.button`
   width: 60px;
   font-size: 1.5em;
   font-weight: 300;
-  background-color: transparent;
-  font-family: ${roboto.style.fontFamily};
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 `;
 

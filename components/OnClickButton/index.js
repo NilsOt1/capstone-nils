@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Roboto } from "@next/font/google";
 
 export default function OnClickButton({ type, children, onClick }) {
   return (
@@ -10,13 +9,6 @@ export default function OnClickButton({ type, children, onClick }) {
     </>
   );
 }
-
-const roboto = Roboto({
-  weight: ["100", "300", "400", "500", "700", "900"],
-  style: ["normal", "italic"],
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const StyledButton = styled.button`
   display: flex;
@@ -30,7 +22,5 @@ export const StyledButton = styled.button`
   width: 120px;
   font-size: 20px;
   font-weight: 100;
-  background-color: transparent;
   color: #4f4f4f;
-  font-family: ${roboto.style.fontFamily};
 `;
