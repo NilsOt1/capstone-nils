@@ -16,14 +16,6 @@ const roboto = Roboto({
   display: "swap",
 });
 
-// const randomColorArray = [
-//   "#9fb937",
-//   "#8d9a5b",
-//   "#6c705c",
-//   "#a2449e",
-//   "#5d7e83",
-// ];
-
 const InfoText = styled.div`
   position: absolute;
   top: 40px;
@@ -67,7 +59,7 @@ const StyledButtonContainer = styled.span`
 const StyledRoomTitle = styled.div`
   text-align: center;
   font-weight: 100;
-  font-size: 3.8em;
+  font-size: 3.3em;
   margin-top: 40px;
   text-decoration: underline;
   text-decoration-thickness: 1px;

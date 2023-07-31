@@ -19,7 +19,7 @@ export default function NewRoomForm({ onCreateRoom, handleFormClose }) {
           type="text"
           id="roomName"
           name="name"
-          maxLength={18}
+          maxLength={11}
           required
         ></StyledInput>
       </StyledLabel>
