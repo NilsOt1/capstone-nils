@@ -2,7 +2,7 @@ import { StyledButton } from "@/components/OnClickButton";
 import styled from "styled-components";
 import { Roboto } from "@next/font/google";
 
-const roboto = Roboto({
+export const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
   style: ["normal", "italic"],
   subsets: ["latin"],
