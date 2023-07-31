@@ -4,8 +4,7 @@ import styled from "styled-components";
 export default function RoomsList({ rooms, handleDeleteRoom }) {
   return (
     <>
-      <StyledHeading>Rooms</StyledHeading>
-      <ul>
+      <StyledUl>
         {rooms.map((room) => {
           return (
             <ListItem
@@ -17,11 +16,13 @@ export default function RoomsList({ rooms, handleDeleteRoom }) {
             </ListItem>
           );
         })}
-      </ul>
+      </StyledUl>
     </>
   );
 }
 
-const StyledHeading = styled.h1`
-  text-align: center;
+const StyledUl = styled.ul`
+  padding: 0;
+  margin-left: 50px;
+  margin-top: 50px;
 `;

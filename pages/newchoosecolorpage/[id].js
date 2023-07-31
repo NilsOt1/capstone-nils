@@ -4,7 +4,25 @@ import MainColor from "@/components/MainColor";
 import styled from "styled-components";
 import { StyledContainer } from "@/components/SuggestedColor/styles";
 import SuggestedColor from "@/components/SuggestedColor";
-import OnClickButton from "@/components/OnClickButton";
+import { StyledButton } from "@/components/OnClickButton";
+import Icon from "@mdi/react";
+import { mdiArrowLeft } from "@mdi/js";
+import { Roboto } from "@next/font/google";
+
+const roboto = Roboto({
+  weight: ["100", "300", "400", "500", "700", "900"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  display: "swap",
+});
+
+// const randomColorArray = [
+//   "#9fb937",
+//   "#8d9a5b",
+//   "#6c705c",
+//   "#a2449e",
+//   "#5d7e83",
+// ];
 
 const InfoText = styled.div`
   position: absolute;
@@ -13,7 +31,7 @@ const InfoText = styled.div`
   transform: translateX(-50%);
   padding: 10px;
   background-color: #f0f0f0;
-  border-radius: 4px;
+  border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: ${(props) => (props.show ? "block" : "none")};
 
@@ -28,31 +46,31 @@ const InfoText = styled.div`
 `;
 
 const InfoButton = styled.button`
-  background-color: #f0f0f0;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
+  border: solid 0.5px;
+  border-radius: 30px;
+  height: 60px;
+  width: 60px;
+  font-size: 1.5em;
+  font-weight: 300;
+  background-color: transparent;
+  font-family: ${roboto.style.fontFamily};
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 `;
 
 const StyledButtonContainer = styled.span`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  margin: 10px 20px 0 0;
+  justify-content: space-between;
+  margin: 5px 20px 0 0;
 `;
 
 const StyledRoomTitle = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border: solid 1px #adadad;
-  border-radius: 10px;
-  margin: 10px auto;
-  height: 40px;
-  width: 80%;
-  font-size: 20px;
-  background-color: #fff;
+  text-align: center;
+  font-weight: 100;
+  font-size: 3.8em;
+  margin-top: 40px;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
 `;
 
 const StyledMain = styled.div`
@@ -60,7 +78,28 @@ const StyledMain = styled.div`
   flex-direction: column;
 `;
 
-export default function NewChooseColorPage({ rooms, handleSetColor }) {
+const CustomBackButton = styled(StyledButton)`
+  margin: 5px 10px;
+  border: solid 0.5px;
+  border-radius: 30px;
+  height: 60px;
+  width: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+`;
+
+const StyledRandomButton = styled(StyledButton)`
+  border: solid 1px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: underline;
+  text-decoration-thickness: 0.5px;
+`;
+
+export default function NewChooseColorPage({
+  rooms,
+  handleSetColor,
+  randomColor,
+  handleRandomClick,
+}) {
   const [showInfo, setShowInfo] = useState(false);
 
   const handleToggleInfo = () => {
@@ -108,10 +147,14 @@ export default function NewChooseColorPage({ rooms, handleSetColor }) {
       <StyledRoomTitle>{currentRoom.name}</StyledRoomTitle>
       <StyledMain>
         <StyledButtonContainer>
+          <CustomBackButton type="button" onClick={handleGoBack}>
+            <Icon path={mdiArrowLeft} size={1.1} />
+          </CustomBackButton>
+          <StyledRandomButton onClick={handleRandomClick}>
+            Inspiration
+          </StyledRandomButton>
           <InfoButton onClick={handleToggleInfo}>i</InfoButton>
         </StyledButtonContainer>
-
-        <OnClickButton type="button" onClick={handleGoBack} text="back" />
         <MainColor
           colors={currentRoom.colors}
           handleSetColor={handleSetColor}
@@ -119,9 +162,18 @@ export default function NewChooseColorPage({ rooms, handleSetColor }) {
         />
       </StyledMain>
       <StyledContainer>
-        <SuggestedColor color={currentRoom.colors.color1}></SuggestedColor>
-        <SuggestedColor color={currentRoom.colors.color2}></SuggestedColor>
-        <SuggestedColor color={currentRoom.colors.color3}></SuggestedColor>
+        <SuggestedColor
+          color={currentRoom.colors.color1}
+          randomColor={randomColor}
+        ></SuggestedColor>
+        <SuggestedColor
+          color={currentRoom.colors.color2}
+          randomColor={randomColor}
+        ></SuggestedColor>
+        <SuggestedColor
+          color={currentRoom.colors.color3}
+          randomColor={randomColor}
+        ></SuggestedColor>
       </StyledContainer>
     </>
   );

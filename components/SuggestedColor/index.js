@@ -2,7 +2,7 @@ import { StyledSuggestion } from "./styles";
 import tinycolor from "tinycolor2";
 import { useState } from "react";
 
-export default function SuggestedColor({ color }) {
+export default function SuggestedColor({ color, randomColor }) {
   const rgbColor = tinycolor(color).toRgbString();
   const tinyColor = tinycolor(rgbColor);
 
@@ -12,14 +12,17 @@ export default function SuggestedColor({ color }) {
     color.toHexString()
   );
 
-  const [hexVisible, setHexVisible] = useState(true);
+  const [hexVisible, setHexVisible] = useState(false);
 
   function toggleColorInfo() {
     setHexVisible(!hexVisible);
   }
 
   return (
-    <StyledSuggestion color={suggestedColors[1]} onClick={toggleColorInfo}>
+    <StyledSuggestion
+      color={randomColor ? randomColor : suggestedColors[1]}
+      onClick={toggleColorInfo}
+    >
       {hexVisible ? suggestedColors[1] : ""}
     </StyledSuggestion>
   );
