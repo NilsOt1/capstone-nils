@@ -32,7 +32,7 @@ export default function ListItem({ room, children, handleDeleteRoom }) {
       <StyledDeleteButton onClick={handleDeleteClick}>
         <Icon path={mdiDeleteOutline} size={1.3} weight={100} />
       </StyledDeleteButton>
-      <StyledRoomLink href={`/newchoosecolorpage/${room.id}`}>
+      <StyledRoomLink href={`/ColorPage/${room.id}`}>
         <StyledListItem>{children}</StyledListItem>
       </StyledRoomLink>
     </StyledRoomsContainer>
