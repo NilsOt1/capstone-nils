@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import MainColor from "@/components/MainColor";
 import styled from "styled-components";
-import { StyledContainer } from "@/components/SuggestedColor/styles";
 import SuggestedColor from "@/components/SuggestedColor";
 import { StyledButton } from "@/components/MainButton";
 import Icon from "@mdi/react";
@@ -78,6 +77,13 @@ const StyledRandomButton = styled(StyledButton)`
   font-size: 1.4em;
 `;
 
+const StyledSuggestionsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px;
+`;
+
 export default function NewChooseColorPage({
   rooms,
   handleSetColor,
@@ -145,7 +151,7 @@ export default function NewChooseColorPage({
           id={id}
         />
       </StyledMain>
-      <StyledContainer>
+      <StyledSuggestionsContainer>
         <SuggestedColor
           color={currentRoom.colors.color1}
           randomColor={randomColor}
@@ -158,7 +164,7 @@ export default function NewChooseColorPage({
           color={currentRoom.colors.color3}
           randomColor={randomColor}
         ></SuggestedColor>
-      </StyledContainer>
+      </StyledSuggestionsContainer>
     </>
   );
 }
