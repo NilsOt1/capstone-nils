@@ -1,6 +1,5 @@
 import tinycolor from "tinycolor2";
 import { useState } from "react";
-
 import styled from "styled-components";
 
 const StyledSuggestion = styled.div`
@@ -15,7 +14,7 @@ const StyledSuggestion = styled.div`
   border-radius: 10px;
 `;
 
-export default function SuggestedColor({ color, randomColor }) {
+export default function SuggestedColor({ color, inspirationColor }) {
   const [hexVisible, setHexVisible] = useState(false);
 
   function toggleColorInfo() {
@@ -32,7 +31,7 @@ export default function SuggestedColor({ color, randomColor }) {
 
   return (
     <StyledSuggestion
-      color={randomColor ? randomColor : suggestedColors[1]}
+      color={inspirationColor ? inspirationColor : suggestedColors[1]}
       onClick={toggleColorInfo}
     >
       {hexVisible ? suggestedColors[1] : ""}

@@ -7,12 +7,13 @@ import styled from "styled-components";
 const StyledRoomsHeading = styled.h1`
   text-align: center;
   font-size: 3.5em;
+  font-weight: 100;
   margin: 50px 0px 20px 0px;
   text-decoration: underline;
   text-decoration-thickness: 1px;
 `;
 
-const CustomNewRoomButton = styled(StyledButton)`
+const StyledNewRoomButton = styled(StyledButton)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,9 +51,9 @@ export default function RoomSelectionPage({
           />
         </>
       ) : (
-        <CustomNewRoomButton onClick={handleNewRoomClick} type="button">
+        <StyledNewRoomButton onClick={handleNewRoomClick} type="button">
           New Room
-        </CustomNewRoomButton>
+        </StyledNewRoomButton>
       )}
       <RoomsList rooms={rooms} handleDeleteRoom={handleDeleteRoom} />
     </>

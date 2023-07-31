@@ -22,8 +22,8 @@ const StyledSuggestionsContainer = styled.span`
 export default function ColorPage({
   rooms,
   handleSetColor,
-  randomColor,
-  handleRandomClick,
+  inspirationColor,
+  handleInspirationClick,
 }) {
   const router = useRouter();
   const { id } = router.query;
@@ -33,7 +33,7 @@ export default function ColorPage({
   return (
     <>
       <StyledRoomTitle>{currentRoom.name}</StyledRoomTitle>
-      <ButtonBar handleRandomClick={handleRandomClick} />
+      <ButtonBar handleInspirationClick={handleInspirationClick} />
       <MainColor
         colors={currentRoom.colors}
         handleSetColor={handleSetColor}
@@ -42,15 +42,15 @@ export default function ColorPage({
       <StyledSuggestionsContainer>
         <SuggestedColor
           color={currentRoom.colors.color1}
-          randomColor={randomColor}
+          inspirationColor={inspirationColor}
         ></SuggestedColor>
         <SuggestedColor
           color={currentRoom.colors.color2}
-          randomColor={randomColor}
+          inspirationColor={inspirationColor}
         ></SuggestedColor>
         <SuggestedColor
           color={currentRoom.colors.color3}
-          randomColor={randomColor}
+          inspirationColor={inspirationColor}
         ></SuggestedColor>
       </StyledSuggestionsContainer>
     </>
