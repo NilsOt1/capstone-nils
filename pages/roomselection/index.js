@@ -13,6 +13,9 @@ const StyledRoomsHeading = styled.h1`
 `;
 
 const CustomNewRoomButton = styled(StyledButton)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 40px auto;
   height: 60px;
   width: 180px;

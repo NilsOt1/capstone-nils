@@ -29,8 +29,7 @@ const InfoText = styled.div`
   }
 `;
 
-const InfoButton = styled.button`
-  border: solid 0.5px;
+const InfoButton = styled(StyledButton)`
   border-radius: 30px;
   height: 60px;
   width: 60px;
@@ -60,8 +59,10 @@ const StyledMain = styled.div`
 `;
 
 const CustomBackButton = styled(StyledButton)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 5px 10px;
-  border: solid 0.5px;
   border-radius: 30px;
   height: 60px;
   width: 60px;
@@ -69,10 +70,12 @@ const CustomBackButton = styled(StyledButton)`
 `;
 
 const StyledRandomButton = styled(StyledButton)`
-  border: solid 1px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-decoration: underline;
   text-decoration-thickness: 0.5px;
+  height: 45px;
+  width: 130px;
+  font-size: 1.4em;
 `;
 
 export default function NewChooseColorPage({

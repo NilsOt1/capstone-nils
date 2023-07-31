@@ -26,6 +26,7 @@ export const StyledFormLabel = styled.label`
 
 export const StyledFormInput = styled.input`
   margin-left: 5px;
+  border-radius: 1px;
 `;
 
 export const StyledFormButtonSpan = styled.span`
@@ -34,10 +35,13 @@ export const StyledFormButtonSpan = styled.span`
 `;
 
 export const StyledFormButton = styled(StyledButton)`
-  border: solid 0.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1);
   padding: 10px;
   margin: 15px 5px;
   height: 40px;
   width: 100px;
+  font-size: 20px;
 `;

@@ -1,11 +1,9 @@
 import { useState } from "react";
 import {
   StyledColorInput,
-  StyledDiv,
   StyledColorLabel,
   StyledMainColorForm,
   StyledColorMeButton,
-  StyledContainer,
 } from "./styles";
 
 export default function MainColor({ colors, id, handleSetColor }) {

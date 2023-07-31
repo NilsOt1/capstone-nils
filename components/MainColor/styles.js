@@ -13,7 +13,7 @@ export const StyledColorInput = styled.input`
 `;
 
 export const StyledMainColorForm = styled.form`
-  /* text-align: center; */
+  text-align: center;
 `;
 
 export const StyledColorMeButton = styled(StyledButton)`

@@ -31,7 +31,12 @@ export default createGlobalStyle`
     font-family: ${roboto.style.fontFamily};
     font-weight: 100;
     background-color: transparent;
+    color: #4f4f4f;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: solid 0.5px;
+    border-radius: 10px;
+    text-decoration: none;
+
 
   }
 `;
