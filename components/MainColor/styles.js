@@ -17,6 +17,9 @@ export const StyledMainColorForm = styled.form`
 `;
 
 export const StyledColorMeButton = styled(StyledButton)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 15px auto;
   width: 200px;
   height: 50px;

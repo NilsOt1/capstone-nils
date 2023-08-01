@@ -20,8 +20,8 @@ export default createGlobalStyle`
     margin: 0;
     font-family: ${roboto.style.fontFamily};
     font-weight: 100;
-    background-image: url(/images/markus-spiske2.jpg);
-    background-size: 375px 667px;
+    background-image: url(/images/markus-spiske11.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
     background-color: transparent;
     color: #4f4f4f;
