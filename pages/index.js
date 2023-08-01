@@ -1,13 +1,24 @@
 import Link from "next/link";
 import styled from "styled-components";
 
+export default function HomePage() {
+  return (
+    <StyledContainer>
+      <StyledHeading>
+        Color<StyledUp>Up</StyledUp>
+      </StyledHeading>
+      <StyledLink href="/roomselection">Let`s Go!</StyledLink>
+    </StyledContainer>
+  );
+}
+
 const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url(/images/markus-spiske.jpg);
+  background-image: url(/images/markus-spiske_starting-page.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -41,20 +52,8 @@ const StyledLink = styled(Link)`
 const StyledUp = styled.span`
   font-size: 80px;
   margin-left: 30px;
-  /* color: #fff; */
 
   @media (min-width: 768px) {
     color: #fff;
   }
 `;
-
-export default function HomePage() {
-  return (
-    <StyledContainer>
-      <StyledHeading>
-        Color<StyledUp>Up</StyledUp>
-      </StyledHeading>
-      <StyledLink href="/roomselection">Let`s Go!</StyledLink>
-    </StyledContainer>
-  );
-}

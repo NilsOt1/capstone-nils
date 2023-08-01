@@ -1,37 +1,30 @@
-# New Next Project
+# ColorUp
 
-This project was created from the neue fische `next` template.
+![App screens](./public/images/screens.png)
 
-You can [🔗 **use this template on CodeSandbox**](https://codesandbox.io/p/sandbox/github/neuefische/web-exercises/tree/main/templates/next?file=/README.md) or locally by running this command in your Terminal:
+## Capstone Project of the Web Development bootcamp at neuefische
 
-```bash
-npx -y ghcd@latest neuefische/web-exercises/tree/main/templates/next my-app -i
-```
+ColorUp - An app for interior room design. After entering three colors present in the room, the user receives three color suggestions for matching wall colors. Standing in an empty room and in need of inspiration for harmonious wall colors? No problem, the Inspiration button sparks your creativity.
 
-## Development
+ColorUP is a creative room color inspiration app. By simply inputting existing colors that are already prominent in your room, the user receives three suggestions for matching wall colors. Standing in an empty room and in need of inspiration for harmonious wall colors? Don't worry, the inspiration button is your friend. Say goodbye to guesswork and unleash your creativity with ColorUp 🎨✨
 
-### Local Development
+### Deployment
 
-To work locally, please install the dependencies using `npm i` first.
+You can have a look at the last update of ColorUp on Vercel: [DemoVersion](https://colorup.vercel.app)
 
-Run `npm run dev` to start a development server and open the displayed URL in a browser.
+### Tech Stack
 
-Use `npm run test` to run the tests.
+- React
+- React Hooks
+- Next.js
+- styled components
+- tinycolor2
+- mdi Pictogrammers
+- uid
+- react-confirm-alert
 
-### CodeSandbox Cloud
+### Project Setup
 
-Select the "Preview: 3000" tab to view this project.
-
-Select the "Tests: logs" tab to view the tests.
-
-> The `npm run dev` and `npm run test` scripts run automatically.
-
-### Scripts
-
-You can use the following commands:
-
-- `npm run dev` to start a development server
-- `npm run build` to build the project
-- `npm run start` to start a production server
-- `npm run test` to run the tests
-- `npm run lint` to run the linter
+- Clone this repository
+- Install all dependencies using `npm install`
+- Run app in development mode using `npm run dev`, and open [http://localhost:3000/](http://localhost:3000/)

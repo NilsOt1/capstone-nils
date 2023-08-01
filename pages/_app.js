@@ -36,7 +36,7 @@ export default function App({ Component, pageProps }) {
       newRoom = {
         ...newRoom,
         id: uid(),
-        colors: { color1: "#fff", color2: "#fff", color3: "#fff" },
+        colors: { color1: "#A47156", color2: "#A47156", color3: "#A47156" },
       };
       setRooms([newRoom, ...rooms]);
     } else {

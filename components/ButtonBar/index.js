@@ -25,10 +25,6 @@ export default function ButtonBar({ handleInspirationClick }) {
     setShowInfo(false);
   };
 
-  StyledInfoText.defaultProps = {
-    $show: false,
-  };
-
   const router = useRouter();
 
   function handleGoBack() {
@@ -38,7 +34,7 @@ export default function ButtonBar({ handleInspirationClick }) {
   return (
     <>
       {showInfo && (
-        <StyledInfoText show={showInfo.toString()} onClick={handleCloseInfo}>
+        <StyledInfoText $show={showInfo.toString()} onClick={handleCloseInfo}>
           How to ColorUP? - It`s a piece of cake. You simply choose three colors
           that are very prominent in your room and then press the button.
         </StyledInfoText>

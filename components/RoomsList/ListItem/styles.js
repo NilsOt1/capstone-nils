@@ -3,6 +3,8 @@ import Link from "next/link";
 
 export const StyledListItem = styled.li`
   list-style-type: none;
+  left: 600px;
+
   border: 0.5px solid;
   border-radius: 10px;
   box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1);

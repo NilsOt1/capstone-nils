@@ -12,6 +12,10 @@ const StyledSuggestion = styled.div`
   width: 33%;
   height: 210px;
   border-radius: 10px;
+
+  @media (min-height: 710px) {
+    height: 290px;
+  }
 `;
 
 export default function SuggestedColor({ color, inspirationColor }) {

@@ -4,27 +4,6 @@ import { useState } from "react";
 import { StyledButton } from "@/components/MainButton";
 import styled from "styled-components";
 
-const StyledRoomsHeading = styled.h1`
-  text-align: center;
-  font-size: 3.5em;
-  font-weight: 100;
-  margin: 50px 0px 20px 0px;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-`;
-
-const StyledNewRoomButton = styled(StyledButton)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 40px auto;
-  height: 60px;
-  width: 180px;
-  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
-  font-size: 1.5em;
-  border: solid 1px;
-`;
-
 export default function RoomSelectionPage({
   rooms,
   handleCreateRoom,
@@ -59,3 +38,24 @@ export default function RoomSelectionPage({
     </>
   );
 }
+
+const StyledRoomsHeading = styled.h1`
+  text-align: center;
+  font-size: 3.5em;
+  font-weight: 100;
+  margin: 50px 0px 20px 0px;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+`;
+
+const StyledNewRoomButton = styled(StyledButton)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  height: 60px;
+  width: 180px;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
+  font-size: 1.5em;
+  border: solid 1px;
+`;

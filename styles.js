@@ -20,7 +20,7 @@ export default createGlobalStyle`
     margin: 0;
     font-family: ${roboto.style.fontFamily};
     font-weight: 100;
-    background-image: url(/images/markus-spiske11.jpg);
+    background-image: url(/images/markus-spiske.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-color: transparent;
@@ -36,7 +36,5 @@ export default createGlobalStyle`
     border: solid 0.5px;
     border-radius: 10px;
     text-decoration: none;
-
-
   }
 `;
