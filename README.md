@@ -1,6 +1,6 @@
 # ColorUp
 
-![App screens](./public/images/screens.png)
+![App screens](./public/images/updated-screens.png)
 
 ## Capstone Project of the Web Development bootcamp at neuefische
 
