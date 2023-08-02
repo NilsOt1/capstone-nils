@@ -3,26 +3,30 @@ import styled from "styled-components";
 
 export default function RoomsList({ rooms, handleDeleteRoom }) {
   return (
-    <>
-      <StyledUl>
-        {rooms.map((room) => {
-          return (
-            <ListItem
-              key={room.id}
-              room={room}
-              handleDeleteRoom={handleDeleteRoom}
-            >
-              {room.name}
-            </ListItem>
-          );
-        })}
-      </StyledUl>
-    </>
+    <StyledUl>
+      {rooms.map((room) => {
+        return (
+          <ListItem
+            key={room.id}
+            room={room}
+            handleDeleteRoom={handleDeleteRoom}
+          >
+            {room.name}
+          </ListItem>
+        );
+      })}
+    </StyledUl>
   );
 }
 
 const StyledUl = styled.ul`
+  display: flex;
+  flex-direction: column;
   padding: 0;
-  margin-left: 50px;
+  margin-left: 20%;
   margin-top: 50px;
+
+  @media (min-width: 510px) {
+    margin-left: 30%;
+  }
 `;

@@ -3,7 +3,7 @@ import useLocalStorageState from "use-local-storage-state";
 import { useState } from "react";
 import { uid } from "uid";
 
-const randomColorArray = [
+const inspirationColorArray = [
   "#568A5C",
   "#8d9a5b",
   "#6c705c",
@@ -17,11 +17,10 @@ const randomColorArray = [
 ];
 
 export default function App({ Component, pageProps }) {
+  const [inspirationColor, setInspirationColor] = useState(null);
   const [rooms, setRooms] = useLocalStorageState("rooms", {
     defaultValue: [],
   });
-
-  const [randomColor, setRandomColor] = useState(null);
 
   function handleSetColor(id, colors) {
     setRooms((prevRooms) =>
@@ -29,7 +28,7 @@ export default function App({ Component, pageProps }) {
         room.id === id ? { ...room, colors: colors } : room
       )
     );
-    setRandomColor("");
+    setInspirationColor("");
   }
 
   function handleCreateRoom(newRoom) {
@@ -37,7 +36,7 @@ export default function App({ Component, pageProps }) {
       newRoom = {
         ...newRoom,
         id: uid(),
-        colors: { color1: "#fff", color2: "#fff", color3: "#fff" },
+        colors: { color1: "#A47156", color2: "#A47156", color3: "#A47156" },
       };
       setRooms([newRoom, ...rooms]);
     } else {
@@ -50,14 +49,14 @@ export default function App({ Component, pageProps }) {
     setRooms(updatedRooms);
   }
 
-  function getRandomColor() {
-    const randomPick = Math.floor(Math.random() * randomColorArray.length);
-    return randomColorArray[randomPick];
+  function getInspirationColor() {
+    const randomPick = Math.floor(Math.random() * inspirationColorArray.length);
+    return inspirationColorArray[randomPick];
   }
 
-  function handleRandomClick() {
-    const randomisedColor = getRandomColor();
-    setRandomColor(randomisedColor);
+  function handleInspirationClick() {
+    const inspirationalColor = getInspirationColor();
+    setInspirationColor(inspirationalColor);
   }
 
   return (
@@ -69,8 +68,8 @@ export default function App({ Component, pageProps }) {
         handleCreateRoom={handleCreateRoom}
         handleDeleteRoom={handleDeleteRoom}
         handleSetColor={handleSetColor}
-        randomColor={randomColor}
-        handleRandomClick={handleRandomClick}
+        handleInspirationClick={handleInspirationClick}
+        inspirationColor={inspirationColor}
       />
     </>
   );

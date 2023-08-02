@@ -1,17 +1,15 @@
 import { useState } from "react";
 import {
-  StyledInput,
-  StyledDiv,
-  StyledLabel,
-  StyledForm,
-  StyledColorButton,
+  StyledColorInput,
+  StyledColorLabel,
+  StyledMainColorForm,
+  StyledColorMeButton,
 } from "./styles";
-import OnClickButton from "../OnClickButton";
 
 export default function MainColor({ colors, id, handleSetColor }) {
   const [selectedColors, setSelectedColors] = useState(colors);
 
-  function handleChange(event) {
+  function handleChangeColor(event) {
     setSelectedColors({
       ...selectedColors,
       [event.target.name]: event.target.value,
@@ -24,23 +22,21 @@ export default function MainColor({ colors, id, handleSetColor }) {
   }
 
   return (
-    <StyledDiv>
-      <StyledForm onSubmit={handleSubmit}>
-        {Object.keys(colors).map((color, index) => {
-          return (
-            <StyledLabel key={index + color} htmlFor={`input-${index}`}>
-              <StyledInput
-                type="color"
-                id={`input-${id}`}
-                name={color}
-                value={selectedColors[color]}
-                onChange={handleChange}
-              />
-            </StyledLabel>
-          );
-        })}
-        <StyledColorButton type="submit">Color Me!</StyledColorButton>
-      </StyledForm>
-    </StyledDiv>
+    <StyledMainColorForm onSubmit={handleSubmit}>
+      {Object.keys(colors).map((color, index) => {
+        return (
+          <StyledColorLabel key={index + color} htmlFor={`input-${index}`}>
+            <StyledColorInput
+              type="color"
+              id={`input-${id}`}
+              name={color}
+              value={selectedColors[color]}
+              onChange={handleChangeColor}
+            />
+          </StyledColorLabel>
+        );
+      })}
+      <StyledColorMeButton type="submit">Color Me!</StyledColorMeButton>
+    </StyledMainColorForm>
   );
 }

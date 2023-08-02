@@ -1,36 +1,8 @@
-import NewRoomForm from "@/components/AddNewRoom/Form";
+import NewRoomForm from "@/components/NewRoomForm";
 import RoomsList from "@/components/RoomsList";
 import { useState } from "react";
-import { Roboto } from "@next/font/google";
-import { StyledButton } from "@/components/OnClickButton";
+import { StyledButton } from "@/components/MainButton";
 import styled from "styled-components";
-
-export const roboto = Roboto({
-  weight: ["100", "300", "400", "500", "700", "900"],
-  style: ["normal", "italic"],
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const StyledRoomsHeading = styled.h1`
-  text-align: center;
-  font-weight: 100;
-  font-size: 3.5em;
-  margin: 50px 0px 20px 0px;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-`;
-
-const CustomNewRoomButton = styled(StyledButton)`
-  margin-top: 40px;
-  height: 60px;
-  width: 180px;
-  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
-  font-size: 1.5em;
-  font-family: ${roboto.style.fontFamily};
-  font-weight: 100;
-  border: solid 1px;
-`;
 
 export default function RoomSelectionPage({
   rooms,
@@ -58,11 +30,32 @@ export default function RoomSelectionPage({
           />
         </>
       ) : (
-        <CustomNewRoomButton onClick={handleNewRoomClick} type="button">
+        <StyledNewRoomButton onClick={handleNewRoomClick} type="button">
           New Room
-        </CustomNewRoomButton>
+        </StyledNewRoomButton>
       )}
       <RoomsList rooms={rooms} handleDeleteRoom={handleDeleteRoom} />
     </>
   );
 }
+
+const StyledRoomsHeading = styled.h1`
+  text-align: center;
+  font-size: 3.5em;
+  font-weight: 100;
+  margin: 50px 0px 20px 0px;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+`;
+
+const StyledNewRoomButton = styled(StyledButton)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  height: 60px;
+  width: 180px;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
+  font-size: 1.5em;
+  border: solid 1px;
+`;

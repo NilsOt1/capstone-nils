@@ -20,10 +20,21 @@ export default createGlobalStyle`
     margin: 0;
     font-family: ${roboto.style.fontFamily};
     font-weight: 100;
-    background-image: url(/images/markus-spiske2.jpg);
-    background-size: 375px 667px;
+    background-image: url(/images/markus-spiske.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
     background-color: transparent;
     color: #4f4f4f;
     }
+
+    button, input {
+    font-family: ${roboto.style.fontFamily};
+    font-weight: 100;
+    background-color: transparent;
+    color: #4f4f4f;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: solid 0.5px;
+    border-radius: 10px;
+    text-decoration: none;
+  }
 `;
