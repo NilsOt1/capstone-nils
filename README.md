@@ -4,9 +4,7 @@
 
 ## Capstone Project of the Web Development bootcamp at neuefische
 
-ColorUp - An app for interior room design. After entering three colors present in the room, the user receives three color suggestions for matching wall colors. Standing in an empty room and in need of inspiration for harmonious wall colors? No problem, the Inspiration button sparks your creativity.
-
-ColorUP is a creative room color inspiration app. By simply inputting existing colors that are already prominent in your room, the user receives three suggestions for matching wall colors. Standing in an empty room and in need of inspiration for harmonious wall colors? Don't worry, the inspiration button is your friend. Say goodbye to guesswork and unleash your creativity with ColorUp 🎨✨
+ColorUP is a creative room color inspiration app. By simply inputting existing colors that are already prominent in your room, the user receives three suggestions for matching wall colors. Standing in an empty room and in need of inspiration for harmonious wall colors? Don't worry, just press the ispiration-button. Say goodbye to guesswork and unleash your creativity with ColorUp 🎨✨
 
 ### Deployment
 
