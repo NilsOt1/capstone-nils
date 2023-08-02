@@ -17,27 +17,31 @@ export default function ColorPage({
 
   return (
     <>
-      <StyledRoomTitle>{currentRoom.name}</StyledRoomTitle>
-      <ButtonBar handleInspirationClick={handleInspirationClick} />
-      <MainColor
-        colors={currentRoom.colors}
-        handleSetColor={handleSetColor}
-        id={id}
-      />
-      <StyledSuggestionsContainer>
-        <SuggestedColor
-          color={currentRoom.colors.color1}
-          inspirationColor={inspirationColor}
-        ></SuggestedColor>
-        <SuggestedColor
-          color={currentRoom.colors.color2}
-          inspirationColor={inspirationColor}
-        ></SuggestedColor>
-        <SuggestedColor
-          color={currentRoom.colors.color3}
-          inspirationColor={inspirationColor}
-        ></SuggestedColor>
-      </StyledSuggestionsContainer>
+      {currentRoom && (
+        <>
+          <StyledRoomTitle>{currentRoom.name}</StyledRoomTitle>
+          <ButtonBar handleInspirationClick={handleInspirationClick} />
+          <MainColor
+            colors={currentRoom.colors}
+            handleSetColor={handleSetColor}
+            id={id}
+          />
+          <StyledSuggestionsContainer>
+            <SuggestedColor
+              color={currentRoom.colors.color1}
+              inspirationColor={inspirationColor}
+            ></SuggestedColor>
+            <SuggestedColor
+              color={currentRoom.colors.color2}
+              inspirationColor={inspirationColor}
+            ></SuggestedColor>
+            <SuggestedColor
+              color={currentRoom.colors.color3}
+              inspirationColor={inspirationColor}
+            ></SuggestedColor>
+          </StyledSuggestionsContainer>
+        </>
+      )}
     </>
   );
 }

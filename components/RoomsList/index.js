@@ -22,8 +22,6 @@ export default function RoomsList({ rooms, handleDeleteRoom }) {
 const StyledUl = styled.ul`
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  align-items: center; */
   padding: 0;
   margin-left: 20%;
   margin-top: 50px;
